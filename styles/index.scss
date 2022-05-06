@@ -13,11 +13,11 @@ a{
     display: flex;
     align-items: center;
     padding: 2px 2px;
-    box-shadow: 1px 1px 5px grey;
+    box-shadow: 1px 1px 10px grey;
     position: -webkit-sticky;
-	position: sticky;
-	top: 0;
-    background: white;
+	  position: sticky;
+    background: linear-gradient(90deg, rgba(218,217,231,1) 0%, rgba(255,255,255,1) 100%, rgba(255,255,255,1) 100%);
+	  top: 0;
     z-index: 2;
     a{
         color: black;
@@ -36,13 +36,13 @@ a{
 }
 
 .navbar-logo{
-    width: 15%;
+    width: 20%;
     display: flex;
     align-items: center;
 }
 
 .nav-center-left{
-    width: 70%;
+    width: 60%;
     display: flex;
     justify-content: space-around;
     
@@ -56,7 +56,7 @@ a{
     background: rgba(0, 0, 0, 0.1);
 }
 .nav-right{
-    width: 15%;
+    width: 20%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -68,12 +68,14 @@ a{
     }
 }
 .nav-item{
-    font-size:110%;
+    font-size:180%;
+    font-weight: bold;
     padding-left: 10px;
 }
 .slideshow{
     height: 980px;
     width: 100%;
+    box-shadow: 1px 1px 10px black;
     background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.8)), url(/images/football-picture.jpg);
     background-size: cover;
     background-repeat: no-repeat;
@@ -115,6 +117,7 @@ a{
 }
 
 .about-section-container{
+  
     text-align: center;
     h3{
         padding-top: 75px;
@@ -137,6 +140,7 @@ a{
 }
 
 .meet-the-team{
+  box-shadow: 1px 1px 10px grey;
     background:linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
     p{
         text-align: center;
@@ -147,12 +151,15 @@ a{
         display: flex;
         justify-content: space-evenly;
         padding-bottom: 50px;
+        width: 80%;
+        margin: 0 auto;
         .member-card{
             box-shadow: 1px 1px 5px grey;
             width: 350px;
             .member-info{
-                background: white;
-                text-align: center;
+              padding: 10px 10px;
+              background: white;
+              text-align: center;
             }
         }
     }
@@ -162,7 +169,7 @@ a{
     width: 100%;
     position: relative;
     height: auto;
-    background-color: #070617;
+    background-color: #272727;
   }
   .footer .col {
     width: 190px;
