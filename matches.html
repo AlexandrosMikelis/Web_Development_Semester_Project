@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+    <head>
+        <title> Patras League </title>
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Black Ops One">
+        <link rel="stylesheet" href="/styles/modal.css" >
+        <link rel="stylesheet" href="/styles/loginstyle.css" >
+        <link rel="stylesheet" href="/styles/matches.css" >
+        <link rel="stylesheet" href="/styles/index.css" >
+        <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <meta charset="UTF-8">
+        <meta name="author" content="Alexandros Mikelis - Stefanos Tsaknakis">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+    </head>
+
+    <body>
+        <div class="navbar">
+                <div class="navbar-logo">
+                    <img src="/images/Logo@2x.png" alt="" width="59" height="59">
+                    <a href="#home" class="nav-item nav-button nav-wide"> Patras League </a>
+                </div>
+                
+                <div class="nav-center-left">
+                    <div class="navlink"><a class="matches" href="#matches"><span><i class="fa fa-futbol-o" aria-hidden="true"></i> MATCHES</span></a></div>
+                    <div class="navlink"><a href="#teams"><i class="fa fa-users" aria-hidden="true"></i> TEAMS</a></div>
+                    <div class="navlink"><a href="#scores"><i class="fa fa-th"></i> SCORES</a></div>
+                    <div class="navlink"><a href="#statistics"><i class="fa fa-bar-chart" aria-hidden="true"></i> STATISTICS</a></div>
+                    <div class="navlink"><a href="#"><i class="fa fa-user" aria-hidden="true"></i> PLAYERS</a></div>
+                </div>
+                <div class="nav-right">
+                  <ul>
+                    <li>
+                      <button class="sign-in">
+                        <a href="register-ground.html">
+                          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-ball-football"
+                          width="44" height="44" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" 
+                          stroke-linecap="round" stroke-linejoin="round">
+                          <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                          <circle cx="12" cy="12" r="9" />
+                          <path d="M12 7l4.76 3.45l-1.76 5.55h-6l-1.76 -5.55z" />
+                          <path d="M12 7v-4m3 13l2.5 3m-.74 -8.55l3.74 -1.45m-11.44 7.05l-2.56 2.95m.74 -8.55l-3.74 -1.45" />
+                          </svg>
+                          <p><strong>Sign Up</strong></p>
+                        </a>
+                      </button>
+                    </li>
+                    <li>
+                      <button class="sign-in" id="signinbtn">
+                        <a>
+                          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-login" width="50"
+                          height="50" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                          stroke-linecap="round" stroke-linejoin="round">
+                          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                          <path d="M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2"></path>
+                          <path d="M20 12h-13l3 -3m0 6l-3 -3"></path>
+                          </svg>
+                          <p><strong>Log in</strong></p>
+                        </a>
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+                <!-- <div class="nav-right">
+                    <img src="/images/clipart2027230.png" height="40">
+                    <a href="#signin" class="sign-in">Sign Up</a>
+                    <button class="sign-in" id="signinbtn">Log In</button>
+                </div> -->
+        </div>
+
+        <div id="signinmodal" class="modal-sign">
+          <form class="signin modal-sign-content" method="POST" action="/login">
+            <span class="close-sign">&times;</span>
+            <fieldset>
+                <h1>
+                  <img src="/images/Logo@2x.png" alt="" width="59" height="59">
+                  Log in
+                  <i class="fas fa-sign-in-alt fa-2x" id="sign-in-icon"></i>
+                </h1> 
+                <!-- <hr> -->
+      
+                <div class='inputwi'>
+                    <label for="email-signin"><strong>Email</strong> <br></label>
+                    <input type="email" name="UserEmail" id="email-signin" placeholder="" required>
+                    <i class="fa fa-envelope fa-lg fa-fw" aria-hidden="true"></i>
+                    <br> 
+                </div>
+      
+                <div class='inputwiPas'>
+                    <label for="password-signin"><strong>Password</strong> <br></label>
+                    <input type="password" name="UserPass" id="password-signin" placeholder="" required>
+                    <i class="fa fa-unlock-alt fa-lg fa-fw" id="togglePasswordSignIn"></i>
+                    <br> 
+                </div>
+        
+              
+      
+      
+              <a href="" id='forgot-pass'><u>Forgot Password ?</u></a>
+              <br>
+      
+              <button>Log In</button>
+            </fieldset>
+          </form>
+        </div>
+        
+    <!-- <script>
+      document.getElementById("signinmodal").style.display = "block";
+    </script> -->
+
+    <script src="/scripts/loginmodal.js"></script>
+        <div class="filters">
+          <div class="filter-all">ALL</div>
+          <div class="filter-live">LIVE</div>
+          <div class="filter-upcoming">UPCOMING</div>
+          <div class="filter-finished">FINISHED</div>
+          <div class="filter-odds">ODDS</div>
+        </div>
+        <select required>
+          <option value="" disabled selected> Select Stage</option>
+          <option value="stage1"> KNOCKOUTS</option>
+          <option value="stage2"> GROUPS</option>
+          <option value="stage3"> PLAY-INS</option>
+          <option value="stage4"> PLAY-OFFS</option>
+        </select>
+        <a class="view-bracket" href="#bracket"><button>View Bracket</button></a>
+        <br><br><br>
+        <fieldset class="matches-display">
+            <div>Patras League: Playoffs Match # 2 </div>
+            <br>
+            <div class="grid">
+                <div class="event-time">03:30</div>       
+                <img class="team-logo" src="/images/Logo@2x.png" alt="" width="20" height="20">
+                <div class="event-team">Team 1</div>
+                <div class="event-score">-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(-)</div><hr>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shirt" width="30"
+                height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="red" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M15 4l6 2v5h-3v8a1 1 0 0 1 -1 1h-10a1 1 0 0 1 -1 -1v-8h-3v-5l6 -2a3 3 0 0 0 6 0" />
+                <title>View team lineup</title>
+                </svg>
+                <img class="team-logo" src="/images/Logo@2x.png" alt="" width="20" height="20">
+                <div class="event-team">Team 2</div>
+                <div class="event-score">-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(-)</div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shirt" width="30"
+                height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="black" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M15 4l6 2v5h-3v8a1 1 0 0 1 -1 1h-10a1 1 0 0 1 -1 -1v-8h-3v-5l6 -2a3 3 0 0 0 6 0" />
+                <title>View team lineup</title>
+                </svg>
+            </div>
+        </fieldset>
+        <fieldset class="matches-display">
+          <div>Patras League: Playoffs Match # 2 </div>
+          <br>
+          <div class="grid">
+              <div class="event-time">03:30</div>       
+              <img class="team-logo" src="/images/Logo@2x.png" alt="" width="20" height="20">
+              <div class="event-team">Team 1</div>
+              <div class="event-score">-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(-)</div><hr>
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shirt" width="30"
+              height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="red" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+              <path d="M15 4l6 2v5h-3v8a1 1 0 0 1 -1 1h-10a1 1 0 0 1 -1 -1v-8h-3v-5l6 -2a3 3 0 0 0 6 0" />
+              <title>View team lineup</title>
+              </svg>
+              <img class="team-logo" src="/images/Logo@2x.png" alt="" width="20" height="20">
+              <div class="event-team">Team 2</div>
+              <div class="event-score">-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(-)</div>
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shirt" width="30"
+              height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="black" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+              <path d="M15 4l6 2v5h-3v8a1 1 0 0 1 -1 1h-10a1 1 0 0 1 -1 -1v-8h-3v-5l6 -2a3 3 0 0 0 6 0" />
+              <title>View team lineup</title>
+              </svg>
+          </div>
+      </fieldset>
+
+            
+<!-- 
+
+        <div id="bracket" class="wrapper">
+          <div class="item">
+            <div class="item-parent">
+              <div class="bracket-game">
+                <div class="player top win">
+                  Snute
+                  <div class="score">
+                    3
+                  </div>
+                </div>
+                <div class="player bot loss">
+                  TLO
+                  <div class="score">
+                    4
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item-childrens">
+              <div class="item-child">
+                <div class="item">
+                  <div class="item-parent">
+                    <div class="bracket-game">
+                      <div class="player top win">
+                        Snute
+                        <div class="score">
+                          3
+                        </div>
+                      </div>
+                      <div class="player bot loss">
+                        TLO
+                        <div class="score">
+                          1
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="item-childrens">
+                    <div class="item-child">
+                      <div class="item">
+                        <div class="item-parent">
+                          <div class="bracket-game">
+                            <div class="player top win">
+                              Snute
+                              <div class="score">
+                                3
+                              </div>
+                            </div>
+                            <div class="player bot loss">
+                              TLO
+                              <div class="score">
+                                1
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="item-childrens">
+                          <div class="item-child">
+                            <div class="bracket-game">
+                              <div class="player top win">
+                                Snute
+                                <div class="score">
+                                  3
+                                </div>
+                              </div>
+                              <div class="player bot loss">
+                                TLO
+                                <div class="score">
+                                  1
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="item-child">
+                            <div class="bracket-game">
+                              <div class="player top win">
+                                Snute
+                                <div class="score">
+                                  3
+                                </div>
+                              </div>
+                              <div class="player bot loss">
+                                TLO
+                                <div class="score">
+                                  1
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="item-child">
+                      <div class="bracket-game">
+                        <div class="player top win">
+                          Snute
+                          <div class="score">
+                            3
+                          </div>
+                        </div>
+                        <div class="player bot loss">
+                          TLO
+                          <div class="score">
+                            1
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+              <div class="item-child">
+                <div class="item">
+                  <div class="item-parent">
+                    <div class="bracket-game">
+                      <div class="player top win">
+                        Snute
+                        <div class="score">
+                          3
+                        </div>
+                      </div>
+                      <div class="player bot loss">
+                        TLO
+                        <div class="score">
+                          1
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="item-childrens">
+                    <div class="item-child">
+                      <div class="item">
+                        <div class="item-parent">
+                          <div class="bracket-game">
+                            <div class="player top win">
+                              Snute
+                              <div class="score">
+                                2
+                              </div>
+                            </div>
+                            <div class="player bot loss">
+                              TLO
+                              <div class="score">
+                                1
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="item-childrens">
+                          <div class="item-child">
+                            <div class="bracket-game">
+                              <div class="player top win">
+                                Snute
+                                <div class="score">
+                                  2
+                                </div>
+                              </div>
+                              <div class="player bot loss">
+                                TLO
+                                <div class="score">
+                                  1
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="item-child">
+                            <div class="bracket-game">
+                              <div class="player top win">
+                                Snute
+                                <div class="score">
+                                  2
+                                </div>
+                              </div>
+                              <div class="player bot loss">
+                                TLO
+                                <div class="score">
+                                  1
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="item-child">
+                      <div class="bracket-game">
+                        <div class="player top win">
+                          Snute
+                          <div class="score">
+                            3
+                          </div>
+                        </div>
+                        <div class="player bot loss">
+                          TLO
+                          <div class="score">
+                            1
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> -->
+
+        
+              <!-- <div class="item-childrens">
+                <div class="item-child">
+                  <div class="item">
+                    <div class="item-parent">
+                      <div class="bracket-game">
+                        <div class="player top win">
+                          Snute
+                          <div class="score">
+                            2
+                          </div>
+                        </div>
+                        <div class="player bot loss">
+                          TLO
+                          <div class="score">
+                            1
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="item-childrens">
+                      <div class="item-child">
+                        <div class="bracket-game">
+                          <div class="player top win">
+                            Snute
+                            <div class="score">
+                              2
+                            </div>
+                          </div>
+                          <div class="player bot loss">
+                            TLO
+                            <div class="score">
+                              1
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="item-child">
+                        <div class="bracket-game">
+                          <div class="player top win">
+                            Snute
+                            <div class="score">
+                              2
+                            </div>
+                          </div>
+                          <div class="player bot loss">
+                            TLO
+                            <div class="score">
+                              1
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div> -->
+
+            <!-- <div id="bracket" class="wrapper">  
+              <div class="item">
+                <div class="item-parent">
+                  <div class="bracket-game">
+                    <div class="player top win">
+                      Snute
+                      <div class="score">
+                        3
+                      </div>
+                    </div>
+                    <div class="player bot loss">
+                      TLO
+                      <div class="score">
+                        4
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="item-childrens">
+                  <div class="item-child">
+                    <div class="item">
+                      <div class="item-parent">
+                        <div class="bracket-game">
+                          <div class="player top win">
+                            Snute
+                            <div class="score">
+                              3
+                            </div>
+                          </div>
+                          <div class="player bot loss">
+                            TLO
+                            <div class="score">
+                              1
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="item-childrens">
+                        <div class="item-child">
+                          <div class="item">
+                            <div class="item-parent">
+                              <div class="bracket-game">
+                                <div class="player top win">
+                                  Snute
+                                  <div class="score">
+                                    3
+                                  </div>
+                                </div>
+                                <div class="player bot loss">
+                                  TLO
+                                  <div class="score">
+                                    1
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="item-childrens">
+                              <div class="item-child">
+                                <div class="bracket-game">
+                                  <div class="player top win">
+                                    Snute
+                                    <div class="score">
+                                      3
+                                    </div>
+                                  </div>
+                                  <div class="player bot loss">
+                                    TLO
+                                    <div class="score">
+                                      1
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="item-child">
+                                <div class="bracket-game">
+                                  <div class="player top win">
+                                    Snute
+                                    <div class="score">
+                                      3
+                                    </div>
+                                  </div>
+                                  <div class="player bot loss">
+                                    TLO
+                                    <div class="score">
+                                      1
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="item-child">
+                          <div class="bracket-game">
+                            <div class="player top win">
+                              Snute
+                              <div class="score">
+                                3
+                              </div>
+                            </div>
+                            <div class="player bot loss">
+                              TLO
+                              <div class="score">
+                                1
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div> -->
+
+              <!-- <div class="tournament-container">
+                <div class="tournament-headers">
+                  <h3>Round of 16</h3>
+                  <h3>Quarter-Finals</h3>
+                  <h3>Semi-Finals</h3>
+                  <h3>Final</h3>
+                  <h3>Winner</h3>
+                </div>
+               -->
+                <div class="tournament-brackets">
+                  <ul class="bracket bracket-1">
+                    <li class="team-item"><img src="images/team-logos/boston.jpg" style="height:20px"> <span style="font-family:Black Ops One">VS</span> C2</li>
+                    <li class="team-item">D1 <span style="font-family:Black Ops One">VS</span> 3BEF</li>
+                    <li class="team-item">B1 <span style="font-family:Black Ops One">VS</span> 3ACD</li>
+                    <li class="team-item">F1 <span style="font-family:Black Ops One">VS</span> E2</li>
+                    <li class="team-item">C1 <span style="font-family:Black Ops One">VS</span> 3ABF</li>
+                    <li class="team-item">E1 <span style="font-family:Black Ops One">VS</span> D2</li>
+                    <li class="team-item">A1 <span style="font-family:Black Ops One">VS</span> 3CDE</li>
+                    <li class="team-item">B2 <span style="font-family:Black Ops One">VS</span> F2</li>
+                  </ul>  
+                  <ul class="bracket bracket-2">
+                    <li class="team-item">QF1 <span style="font-family:Black Ops One">VS</span> QF2</li>
+                    <li class="team-item">QF3 <span style="font-family:Black Ops One">VS</span> QF4</li>
+                    <li class="team-item">QF5 <span style="font-family:Black Ops One">VS</span> QF6</li>
+                    <li class="team-item">QF7 <span style="font-family:Black Ops One">VS</span> QF8</li>
+                  </ul>  
+                  <ul class="bracket bracket-3">
+                    <li class="team-item">SF1 <span style="font-family:Black Ops One">VS</span> SF2</li>
+                    <li class="team-item">SF3 <span style="font-family:Black Ops One">VS</span> SF4</li>
+                  </ul>  
+                  <ul class="bracket bracket-4">
+                    <li class="team-item">F1 <span style="font-family:Black Ops One">VS</span> F2</li>
+                  </ul>  
+              
+                  <ul class="bracket bracket-5">
+                    
+                  </ul>  
+                  
+                </div>
+              </div>
+        
+    </body>
+</html>
