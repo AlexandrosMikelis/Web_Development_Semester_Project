@@ -1,0 +1,245 @@
+/* .nav-center-left > :first-child {
+    text-decoration: underline;
+    text-underline-offset: 10px;
+    text-decoration-thickness: 5px;
+}
+
+.nav-center-left div a span{
+    color: black;
+}
+
+.nav-center-left>div a{
+    color: green;
+} */
+
+.nav-center-left > :first-child a{
+    color: purple !important;
+}
+
+.nav-center-left > :first-child {
+    background: rgba(0, 0, 0, 0.1);
+    margin: 0 2px;
+}
+
+.matches-display{
+    margin: 5% 10%;
+}
+
+.event-time{
+    grid-row: 1/ span 2;
+    align-self: center;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.event-team{
+    justify-self: start;
+    align-self:center;
+    font-family: "Raleway", sans-serif;
+    font-weight: 800;
+    font-size: 20px;
+}
+
+.event-score{
+    align-self: center;
+}
+
+fieldset{
+    border-radius: 6px;
+    background-color: white;
+}
+
+hr{
+    grid-row: hr;
+    grid-column: hr;
+    border: 3px solid lightgray;
+    border-right: none;
+    border-bottom: none;
+    border-top: none;
+}
+
+.team-logo{
+    padding-right: 1rem;
+    align-self: center;
+    justify-self: start;
+}
+
+.grid{
+    display:grid;
+    /* grid-template-areas: "eventtime homelogo homeparticipant homescore "
+                         "eventtime awaylogo awayparticipant awayscore "; */
+    grid-template-areas: "eventtime homelogo homeparticipant homescore hr svg" 
+                         "eventtime awaylogo awayparticipant awayscore hr svg";
+    grid-template-columns: 5rem 1fr 7fr 3fr 1fr 2fr;
+    /* grid-template: 7em 7em 7em 7em 7em/7em 7em 7em 7em 7em; */
+                         
+}
+
+select{
+    display: flex;
+    position:absolute; 
+    gap: 3%;
+    top:19%;
+    left: 55%;
+    font-size: 19px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border: 1px solid gray;
+    border-radius: 3px;
+    background-color: whitesmoke;
+}
+
+select:required:invalid{
+    color:lightgray;
+}
+
+option[value=""][disabled] {
+    display: none;
+}
+
+option {
+    color: black;
+}
+
+.view-bracket{
+    position:absolute;
+    top:15%;
+    right: 10%;
+}
+
+.view-bracket button{
+    font-size: 20px;
+    font-family: "Raleway", sans-serif;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+.filters{
+    display: flex;
+    position:absolute; 
+    gap: 3%;
+    top:19%;
+    left: 10%;
+}  
+
+div[class^="filter-"]{
+    font-size: 19px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border: 1px solid gray;
+    border-radius: 3px;
+    background-color: whitesmoke;
+    padding: 0 1%;
+} 
+
+div[class^="filter-"]:hover{
+    background-color: gray;
+    cursor: pointer;
+}
+
+body {
+    background-color: lightgray;
+}
+
+.wrapper {
+    display: flex;
+    height: 600px;
+    justify-content: center;
+}
+.item {
+    display: flex;
+    flex-direction: row-reverse;
+}
+.item p {
+    padding: 20px;
+    margin: 0;
+    background-color: Beige;
+}
+.item-parent {
+    position: relative;
+    margin-left: 50px;
+    display: flex;
+    align-items: center;
+}
+.item-parent:after {
+    position: absolute;
+    content: '';
+    width: 25px;
+    height: 2px;
+    left: 0;
+    top: 50%;
+    background-color: #fff;
+    transform: translateX(-100%);
+}
+.item-childrens {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.item-child {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    position: relative;
+}
+.item-child:before {
+    content: '';
+    position: absolute;
+    background-color: #fff;
+    right: 0;
+    top: 50%;
+    transform: translateX(100%);
+    width: 25px;
+    height: 2px;
+}
+.item-child:after {
+    content: '';
+    position: absolute;
+    background-color: #fff;
+    right: -25px;
+    height: calc(50% + 22px);
+    width: 2px;
+    top: 50%;
+}
+.item-child:last-child:after {
+    transform: translateY(-100%);
+}
+.item-child:only-child:after {
+    display: none;
+}
+
+.round {
+    float: left;
+  }
+  .round.r-of-2 {
+    margin-top: 25px;
+  }
+  .bracket-game {
+    max-width: 125px;
+    margin: 10px 0;
+  }
+  .player {
+    min-width: 100px;
+    border: 1px solid #AAA;
+    padding-left: 10px;
+  }
+  .player.top {
+    border-radius: 3px 3px 0 0;
+  }
+  .player.bot {
+    border-radius: 0 0 3px 3px;
+  }
+  .player .score {
+    display: inline;
+    float: right;
+    border-left: 1px solid #AAA;
+    padding-left: 13px;
+    padding-right: 13px;
+    width:0.5rem;
+    background: #EEE;
+  }
+  .player.win {
+    background-color: #B8F2B8;
+  }
+  .player.loss {
+    background-color: #F2B8B8;
+  }

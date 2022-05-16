@@ -39,6 +39,9 @@ a {
 
 .sign-in {
   line-height: 3;
+  background-color: transparent;
+  border:none; 
+  cursor: pointer;
 }
 
 .white {
@@ -94,6 +97,58 @@ a {
   font-weight: bold;
 }
 
+.nav-right ul{
+  list-style: none;
+  display: flex;
+  align-items: baseline;
+  padding: 0;
+  margin-top: 0;
+  flex-grow: 1;
+  justify-content: space-around;
+}
+
+.nav-right ul a{font-size: 20px;}
+
+.nav-right ul p{
+  white-space: nowrap;
+  padding:0;
+  line-height: 0;
+  margin-top:0;
+  margin-bottom: 0;
+}
+
+.nav-right ul p strong{
+  white-space: nowrap;
+  padding:0;
+  margin-top:0;
+  line-height: 0;
+  margin-bottom: 0;
+}
+
+.nav-right ul a{
+  display:flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  align-items:center;
+}
+
+.nav-right button:hover a {
+  color: yellowgreen !important;
+}
+
+.nav-right li{
+  line-height: 0;
+  text-align: center;
+  cursor: pointer;
+}
+
+.sign-in p{
+  line-height: 0;
+  padding: 0;
+  border: none;
+  white-space: nowrap;
+}
+
 .nav-item {
   font-size: 180%;
   font-weight: bold;
@@ -107,6 +162,18 @@ a {
           box-shadow: 1px 1px 10px black;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.1)), to(rgba(0, 0, 0, 0.8))), url(/images/football-picture.jpg);
   background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.8)), url(/images/football-picture.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: black;
+}
+
+.slideshow2 {
+  /* height: 980px;
+  width: 100%; */
+  -webkit-box-shadow: 1px 1px 10px black;
+          box-shadow: 1px 1px 10px black;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.1)), to(rgba(0, 0, 0, 0.8))), url(/images/football-picture.jpg);
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.8)), url(/images/euro-wall.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-color: black;
@@ -144,6 +211,12 @@ a {
   font-weight: bold;
 }
 
+.large-text2 {
+  line-height: 2;
+  font-size: 200%;
+  font-weight: bold;
+}
+
 .view-btn {
   color: black;
   font-weight: 900;
@@ -176,6 +249,19 @@ a {
 .about-section-container .feature-container .feature {
   width: 15%;
   padding-bottom: 75px;
+}
+
+html {
+  scroll-behavior:smooth ;
+}
+
+.about-section-container .feature-container .feature2 {
+  width: 40%;
+  padding-bottom: 75px;
+}
+
+.feature2 p {
+  font-size: 150%;
 }
 
 .meet-the-team {
