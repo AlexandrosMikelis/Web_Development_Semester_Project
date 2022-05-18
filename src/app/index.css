@@ -50,10 +50,24 @@ a {
   cursor: pointer;
 }
 
+.sign-in a{
+  display: flex;
+}
+
 .white {
   background: white;
 }
-
+.pl-input {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+  margin-top: 5px;
+  font-size: large;
+}
+.email-input{
+  margin-top: 40px;
+}
 .navbar-logo {
   width: 20%;
   display: -webkit-box;
@@ -160,7 +174,14 @@ a {
   font-weight: bold;
   padding-left: 10px;
 }
-
+.name {
+  font-size: x-large;
+}
+.title{
+  margin-top: 30px;
+  font-size: xx-large;
+  font-weight:bolder;
+}
 .slideshow {
   height: 980px;
   width: 100%;
@@ -228,11 +249,29 @@ a {
   font-weight: 900;
   opacity: 1;
 }
-
+.submit-btn-text{
+  color: white;
+}
+.no-account{
+  margin-top: 40px;
+}
+.no-account-text{
+  margin-top: 20px;
+  font-size: large;
+}
 .about-section-container {
   text-align: center;
 }
-
+#sign-up{
+  font-size:xx-large;
+  font-weight: 900;
+  color: #EB6E34;
+}
+.forgot-password a{
+  text-decoration: none;
+  font-size: large;
+  font-weight: bold;
+}
 .about-section-container h3 {
   padding-top: 75px;
   font-size: x-large;

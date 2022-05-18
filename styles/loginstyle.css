@@ -23,28 +23,25 @@
 }
 
 .signin input{
-    width: 85%;
+    width: 55%;
     padding: 0.5em;
     margin: 1em 0 2em 0;
-    border: 2px solid black;
-    border-radius: 8px;
+    border: none;
     transition: all 0.1s ease;
+    border-bottom: 3px solid rgb(151, 151, 151) ;
 }
 
 .signin input:hover {
-    border: 2px solid blue;
     /* box-shadow: 1px 1px #EB6E34; */
 }
 
 .signin input::placeholder {
+    font-size: large;
     transition: none;
 }
 
 .signin input:focus {
-    border: 2px solid darkblue;
     outline: none; 
-    box-shadow: 0 0 0 2px darkblue;
-    border-radius: 8px;
 }
     
 .signin input:focus::placeholder {
@@ -59,12 +56,13 @@
     display:block;
     /* width: calc(10% + 7em); */
     font-weight: bolder;
-    height: 2em;
+    height: 2.2em;
     font-size:20px;
     text-align: center;
-    color: white;
-    background-color: rgb(51, 51, 232);
-    border-radius: 5px;
+    width: 55%;
+    border-radius: 20px;
+    background-image: linear-gradient(to right, red , #EB6E34);
+    background-color: #EB6E34;
     margin: 1em auto 0.5em auto;
     cursor: pointer;
     border: 3px ;
@@ -74,7 +72,8 @@
 
 
 .signin button:hover{
-    background-color: darkblue;
+    background-color: white;
+    border: 3px solid #EB6E34;
     transition-property: background-color;
     transition-duration: 0.4s;
     outline: none;
@@ -116,5 +115,45 @@ h1 i{
     /* top: 7px; */
     /* left: 100px; */
     right: 20px;
+}
+
+.input-wrapper {
+    position: relative;
+    line-height: 14px;
+    width: 100%;
+    display: inline-block;
+    margin-top: 30px;
+    width: 70%;
+}
+.input-wrapper label {
+    text-align: left;
+    line-height: 24px;
+    position: absolute;
+    z-index: 2;
+    left: 0px;
+    top: 14px;
+    pointer-events: none;
+    transition: transform 100ms ease;
+    font-weight: normal;
+    font-size: large;
+    transform: translateY(-25px);
+}
+.input-wrapper input {
+    width: 100%;
+    line-height: 24px;
+    outline: none;
+    border: unset;
+    border-bottom: 1.5px solid var(--unnamed-color-94a3be);
+    border-bottom: 1.5px solid #94a3be;
+    padding: 5px 0px;
+    position: relative;
+}
+.input-wrapper input:placeholder-shown + label{
+    transform: translateY(0);
+}
+.input-wrapper input:focus + label {
+    font-weight: bold;
+    font-size: small;
+    transform: translateY(-25px);
 }
 
