@@ -1,0 +1,30 @@
+{
+  "dependencies": {
+    "compression": "^1.7.4",
+    "crypto": "^1.0.1",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "express-handlebars": "^6.0.6",
+    "nodemon": "^2.0.16",
+    "path": "^0.12.7",
+    "pg": "^8.7.3"
+  },
+  "name": "web_development_semester_project",
+  "description": "",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexandrosMikelis/Web_Development_Semester_Project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlexandrosMikelis/Web_Development_Semester_Project/issues"
+  },
+  "homepage": "https://github.com/AlexandrosMikelis/Web_Development_Semester_Project#readme"
+}
