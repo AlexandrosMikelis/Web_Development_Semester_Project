@@ -1,8 +1,8 @@
 //################################################
-// const pg = require("pg");
-// const dotenv = require("dotenv");
+const pg = require("pg");
+const dotenv = require("dotenv");
 
-// dotenv.config();
+dotenv.config();
 // console.log(process.env)
 //################################################
 
@@ -17,23 +17,24 @@
 
 
 //################################################
-// const { Client } = require('pg');
+const { Client } = require('pg');
 
-// const client = new Client({
-//     user: 'postgres',
-//     host: 'localhost',
-//     database: 'league',
-//     password: '',
-//     port: 5432
-// });
+const client = new Client({
+    user: 'postgres',
+    host: 'localhost',
+    database: 'league',
+    password: '',//yourpassword
+    port: 5432
+});
 
-// client.connect((err) => {
-//     if (err)
-//         throw err;
-// });
+client.connect((err) => {
+    if (err)
+        throw err;
+    else console.log("connected")
+});
 
 
-// module.exports = client;
+module.exports = client;
 //################################################
 
 

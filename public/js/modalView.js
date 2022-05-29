@@ -17,7 +17,7 @@ function CreateModal(){
     fieldset = document.createElement("fieldset")
 
     img = document.createElement('img');
-    img.src = "/public/images/Logo@2x.png";
+    img.src = "/images/Logo@2x.png";
     img.width = "99";
     img.height = "99";
 

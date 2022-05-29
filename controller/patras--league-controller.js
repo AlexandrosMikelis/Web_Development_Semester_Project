@@ -23,18 +23,18 @@
 //     })
 // }
 //##############################################################
-// const model = require('../model/patras--league-model-pg-db.js');
+const model = require('../model/patras--league-model-pg-db.js');
 
-// exports.addNewUser = (res,req) => {
+exports.addNewUser = (res,req) => {
 
 	
-// 	model.addNewUser( (err, res) => {
-// 		if (err) {
-//             res.send(err);
-//         }
-//         else {
-//             res.forEach(console.log(res))
-//             }
-//     })
-// }
+	model.addNewUser( (err, res) => {
+		if (err) {
+            res.send(err);
+        }
+        else {
+            res.forEach(console.log(res))
+            }
+    })
+}
 //##############################################################

@@ -39,8 +39,7 @@
       {{else}}
       <script src="/public/js/navbar.js"></script> --}}
       
-      <div class="navb"></div>
-      <script src="js/manager-nav.js"></script>
+      
       {{!-- <div class="navbar"></div>
 
       <div id="signinmodal" class="modal-sign"></div>
@@ -49,14 +48,23 @@
       <script src="/public/js/modalService.js"></script> --}}
     {{!-- {{/if}} --}}
     {{#if loggedin}}
-    {{> loggedinPartial partialContext}}
+    <div class="navb"></div>
+      <script src="/js/manager-nav.js"></script>
+    
 
+    {{else}}
+    <div class="navbar"></div>
+        <script src="/js/navbar.js"></script>
     {{!-- {{else}}
     {{> notLoggedinPartial partialContext}}  --}}
 
     {{/if}}
 
-    {{{body}}}
+    {{#if mainpage}}
+        {{> loggedinPartial partialContext}}
+    {{/if}}
 
+    {{{body}}}
+  
     </body>
 </html>

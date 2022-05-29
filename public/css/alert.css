@@ -1,7 +1,7 @@
 
 
 .alert-content * {
-    color: #EB6E34;
+    color: #f7f6f6;
 }
 
 .alert-content{
@@ -11,7 +11,7 @@
 
 .alert-content>.fldset {
     border: 0;
-    background-color: #6d3333;
+    background: linear-gradient(4deg, #240404 0%, #703b3b 100%, white 100%);
 }
 
 .alert-content>.fldset>h3 {

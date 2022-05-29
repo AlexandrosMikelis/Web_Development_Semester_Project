@@ -1,5 +1,5 @@
 body{
-    background-color: rgb(5, 17, 18)
+    background: linear-gradient(0deg, #3b4343 0%, rgb(19, 16, 18) 100%, white 100%);
 }
 
 h2{
@@ -214,7 +214,7 @@ input:focus {
 }
 
 fieldset{
-    background-color: rgb(10, 6, 240);
+    background-color: rgb(47, 46, 80);
     border-radius: 5px;
     border: 5px solid rgb(152, 178, 34);
 }

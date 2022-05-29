@@ -1,27 +1,27 @@
 
 
-.alert-content * {
+.alert-content2 * {
     color: #000000;
 }
 
-.alert-content{
+.alert-content2{
     margin-top: 10em;
     width: 50%;
 }
 
-.alert-content>.fldset {
+.alert-content2>.fldset {
     border: 0;
-    background: linear-gradient(90deg, #07d76f 0%, rgb(25, 85, 69) 100%, white 100%);
+    background: linear-gradient(90deg, #0b713e 0%, rgb(25, 85, 69) 100%, white 100%);
     
     /* background-color: #336d4d; */
 }
 
-.alert-content>.fldset>h3 {
+.alert-content2>.fldset>h3 {
     margin-top: 0;
 }
 
 
-.alert-content button{
+.alert-content2 button{
     display:block;
     width: calc(10% + 7em);
     height: 2em;
@@ -41,7 +41,7 @@
 }
 
 
-.alert-content button:hover{
+.alert-content2 button:hover{
     background-color: #33a92a;
     color: white;
     border: 3px solid #4334eb;
@@ -50,20 +50,20 @@
     outline: none;
 }
 
-.alert-content button:active {
+.alert-content2 button:active {
     background-color: #d8e4d6;
     border-color: #0f0fc2;
     transform: scale(0.99);
     outline: none;
 }
 
-.close-sign-alert:hover, .close-sign-alert:focus {
+.close-sign-alert2:hover, .close-sign-alert2:focus {
     color: #000;
     text-decoration: none;
     cursor: pointer;
 }
 
-.close-sign-alert {
+.close-sign-alert2 {
     color: #64b8ba;
     float: right;
     font-size: 28px;
@@ -72,11 +72,11 @@
     position: relative;
 }
 
-#alert-modal {
+#alert-modal2 {
     z-index: 10000000;
 }
 
-.modal-sign {
+.modal-sign2 {
     display: none;
     position: fixed;
     padding-top: 20px;
@@ -89,7 +89,7 @@
 }
 
 
-.modal-sign-content {
+.modal-sign-content2 {
     background-color: #fefefe;
     margin: auto;
     padding: 20px;
@@ -107,6 +107,6 @@
     box-shadow: 10px 10px rgba(18, 139, 62, 0.649);
 }
 
-.modal-sign-content-up {
+.modal-sign-content-up2 {
     margin: auto;
 }

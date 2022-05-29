@@ -1,31 +1,17 @@
-﻿<!DOCTYPE html>
-    <head>
-        <title> Patras League </title>
-        <link rel="stylesheet" href="/public/css/index.css" >
-        <link rel="stylesheet" href="/public/css/modal.css" >
-        <link rel="stylesheet" href="/public/css/loginstyle.css">
-        <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <meta charset="UTF-8">
-        <meta name="author" content="Alexandros Mikelis - Stefanos Tsaknakis">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    </head>
-
-   <body>
-      <script src="/public/js/navbar.js"></script>
+﻿
+      {{!-- <script src="/js/navbar.js"></script>
       
-      <div class="navbar"></div>
+      <div class="navbar"></div> --}}
 
       <div id="signinmodal" class="modal-sign"></div>
 
-      <script src="/public/js/modalView.js"></script>
-      <script src="/public/js/modalService.js"></script>
+      <script src="/js/modalView.js"></script>
+      <script src="/js/modalService.js"></script>
     
      {{#if aftersignup}}
-        <div id="alert" class="modal-sign" style="display: block;">
-            <div class="alert-content modal-sign-content">
-                <span id="close-sign-alert-index" class="close-sign-alert">&times;</span>
+        <div id="alert2" class="modal-sign2" style="display: block;">
+            <div class="alert-content2 modal-sign-content2">
+                <span id="close-sign-alert-index2" class="close-sign-alert2">&times;</span>
                 <fieldset class="fldset">
                 
                     <h2>You can now sign-in, create your team, as well as schedule scrimmages and practises in our
@@ -39,7 +25,7 @@
         <script>
             const alertbtnclose = document.querySelector("#alert-btn-index1");
             alertbtnclose.onclick = () => {
-            document.querySelector("#alert").style.display = "none";}
+            document.querySelector("#alert2").style.display = "none";}
         </script>
      {{/if}}
 
@@ -87,7 +73,7 @@
             <div class="meet-the-team-container">
                 
                 <div class="member-card">
-                    <img src="/public/images/1587992955359.jpg" width="350">
+                    <img src="/images/1587992955359.jpg" width="350">
                     <div class="member-info">
                         <h3>Alexandros Mikelis</h3>
                         <h4>Fullstack developer of Patras League</h4>
@@ -96,7 +82,7 @@
                 </div>
 
                 <div class="member-card">
-                    <img src="/public/images/default-user.jpg" width="350">
+                    <img src="/images/default-user.jpg" width="350">
                     <div class="member-info">
                       <h3>Stefanos Tsaknakis</h3>
                       <h4>Fullstack developer of Patras League</h4>

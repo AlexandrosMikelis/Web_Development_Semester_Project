@@ -193,7 +193,7 @@ document.querySelector(".navbar").innerHTML = `
           <a href="/public/html/players.html">PLAYERS</a>
         </div>
         <button id="mobile-nav-open" class="header-icon" onclick="openNav()">
-          <img id="menu-svg" src="/public/images/menu_icon.svg">
+          <img id="menu-svg" src="/images/menu_icon.svg">
         </button>  
         <script>
           function openNav() {
@@ -207,7 +207,7 @@ document.querySelector(".navbar").innerHTML = `
 
         
                 <div class="navbar-logo">
-                    <img src="/public/images/Logo@2x.png" alt="" width="59" height="59">
+                    <img src="/images/Logo@2x.png" alt="" width="59" height="59">
                     <a href="/public/html/index.html" class="nav-item nav-logoname nav-button nav-wide"> Patras League </a>
                 </div>
                 
