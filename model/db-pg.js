@@ -23,7 +23,7 @@
 //     user: 'postgres',
 //     host: 'localhost',
 //     database: 'league',
-//     password: '24121998',
+//     password: '',
 //     port: 5432
 // });
 
