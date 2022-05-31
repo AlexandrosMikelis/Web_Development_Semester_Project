@@ -38,7 +38,7 @@
           <div class="bracket-view-container"><a class="view-bracket" href="#bracket"><button>View Bracket</button></a></div>
         </div>
 
-        <div class="displays">
+        <!-- <div class="displays">
           
         </div>
         
@@ -73,7 +73,319 @@
           </ul>  
                   
         </div>
-      </div>
-        
+      </div> -->
+      
+      <script> let numofmatches = 4;</script>
+
+      <div class="bracket-tamper"></div>
+      
+      <!-- <div class="slotted-bracket">
+        <div class="slotted-bracket-tier" style="height: 308px;">
+          <div class="bracket-tier-header">Upper Bracket</div>
+          <div class="rounds">
+            <div class="round">
+              <div class="round-header" title="Collapse round" style="top: 0px;">Opening round</div>
+              <div class="slots" style="height: 244px;">
+                <div class="slot-wrapper" style="top: 0px;">
+                  <div class="match">
+                    <div class="team team1 winner">
+                      <div class="slot-team-image-container fixed-candidate">
+                        <img
+                          class="team-image night-only">
+                        
+                      </div>
+                      <span class="team-name text-ellipsis">Team1</span>
+                      <span class="result">2</span>
+                    </div>
+                    <div class="team team2 loser">
+                      <div class="slot-team-image-container fixed-candidate">
+                        <img
+                          class="team-image night-only">
+                        
+                      </div>
+                      <span class="team-name text-ellipsis">Team8</span>
+                      <span class="loser-icon fa fa-long-arrow-down"></span>
+                      <span class="result">1</span>
+                    </div>
+                  </div>
+                  <div class="exit down " style="height: 18px;">
+                    <div class="entry down "></div>
+                  </div>
+                </div>
+                <div class="slot-wrapper" style="top: 63px;">
+                  <div class="match">
+                    <div class="team team1 loser">
+                      <div class="slot-team-image-container fixed-candidate">
+                        <img
+                          class="team-image night-only">
+                        <img
+                          class="team-image day-only">
+                      </div>
+                      <span class="team-name text-ellipsis">Team2</span>
+                      <span class="loser-icon fa fa-long-arrow-down"></span>
+                      <span class="result">0</span>
+                    </div>
+                    <div class="team team2 winner">
+                      <div class="slot-team-image-container fixed-candidate">
+                        <img
+                          class="team-image night-only">
+                        <img
+                          class="team-image day-only">
+                      </div>
+                      <span class="team-name text-ellipsis">Team5</span>
+                      <span class="result">2</span>
+                    </div>
+                  </div>
+                  <div class="exit up " style="height: 19px;">
+                    <div class="entry up "></div>
+                  </div>
+                </div>
+                <div class="slot-wrapper" style="top: 126px;">
+                  <div class="match">
+                    <div class="team team1 winner">
+                      <div class="slot-team-image-container fixed-candidate">
+                        <img
+                          class="team-image night-only">
+                        <img
+                          class="team-image day-only">
+                      </div>
+                      <span class="team-name text-ellipsis">Team3</span>
+                      <span class="result">2</span>
+                    </div>
+                    <div class="team team2 loser">
+                      <div class="slot-team-image-container fixed-candidate"><img
+                          class="team-image night-only"><img
+                          class="team-image day-only"></div><span class="team-name text-ellipsis">Team7</span><span
+                        class="loser-icon fa fa-long-arrow-down"></span><span class="result">0</span>
+                    </div>
+                  </div>
+                  <div class="exit down " style="height: 18px;">
+                    <div class="entry down "></div>
+                  </div>
+                </div>
+                <div class="slot-wrapper" style="top: 189px;">
+                  <div class="match">
+                    <div class="team team1 winner">
+                      <div class="slot-team-image-container fixed-candidate"><img
+                          class="team-image night-only"><img
+                          class="team-image day-only"></div><span class="team-name text-ellipsis">Team4</span><span
+                        class="result">2</span>
+                    </div>
+                    <div class="team team2 loser">
+                      <div class="slot-team-image-container fixed-candidate">
+                        <img
+                          class="team-image night-only">
+                        <img
+                          class="team-image day-only">
+                      </div><span class="team-name text-ellipsis">Team6</span><span
+                        class="loser-icon fa fa-long-arrow-down"></span><span class="result">1</span>
+                    </div>
+                  </div>
+                  <div class="exit up " style="height: 19px;">
+                    <div class="entry up "></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="round">
+              <div class="round-header" title="Collapse round" style="top: 0px;">Upper semi-finals</div>
+              <div class="slots" style="height: 212px;">
+                <div class="slot-wrapper" style="top: 31px;">
+                  <div class="match">
+                    <div class="team team1 winner">
+                      <div class="slot-team-image-container fixed-candidate"><img
+                          class="team-image night-only"><img
+                          class="team-image day-only"></div><span class="team-name text-ellipsis">Team1</span><span
+                        class="result">2</span>
+                    </div>
+                    <div class="team team2 loser">
+                      <div class="slot-team-image-container fixed-candidate"><img
+                          class="team-image night-only"><img
+                          class="team-image day-only"></div><span class="team-name text-ellipsis">Team5</span><span
+                        class="loser-icon fa fa-long-arrow-down"></span><span class="result">1</span>
+                    </div>
+                  </div>
+                  <div class="exit down " style="height: 50px;">
+                    <div class="entry down "></div>
+                  </div>
+                </div>
+                <div class="slot-wrapper" style="top: 157px;">
+                  <div class="match">
+                    <div class="team team1 winner">
+                      <div class="slot-team-image-container fixed-candidate"><img
+                          class="team-image night-only"><img
+                          class="team-image day-only"></div><span class="team-name text-ellipsis">Team3</span><span
+                        class="result">2</span>
+                    </div>
+                    <div class="team team2 loser">
+                      <div class="slot-team-image-container fixed-candidate"><img
+                          class="team-image night-only"><img
+                          class="team-image day-only"></div><span class="team-name text-ellipsis">Team4</span><span
+                        class="loser-icon fa fa-long-arrow-down"></span><span class="result">0</span>
+                    </div>
+                  </div>
+                  <div class="exit up " style="height: 50px;">
+                    <div class="entry up "></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="round">
+              <div class="round-header" title="Collapse round" style="top: 0px;">Upper final</div>
+              <div class="slots" style="height: 149px;">
+                <div class="slot-wrapper" style="top: 94px;">
+                  <div class="match">
+                    <div class="team team1 winner">
+                      <div class="slot-team-image-container fixed-candidate"><img
+                          class="team-image night-only"><img
+                          class="team-image day-only"></div><span class="team-name text-ellipsis">Team1</span><span
+                        class="winner-icon fa fa-long-arrow-right"></span><span class="result">2</span>
+                    </div>
+                    <div class="team team2 loser">
+                      <div class="slot-team-image-container fixed-candidate"><img
+                          class="team-image night-only"><img
+                          class="team-image day-only"></div><span class="team-name text-ellipsis">Team3</span><span
+                        class="loser-icon fa fa-long-arrow-right"></span><span class="result">1</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="slotted-bracket-tier" style="height: 262px;">
+          <div class="bracket-tier-header">Lower Bracket</div>
+          <div class="rounds">
+            <div class="round">
+              <div class="round-header" title="Collapse round" style="top: 0px;">Lower round 1</div>
+              <div class="slots" style="height: 198px;">
+                <div class="slot-wrapper" style="top: 20px;">
+                  <div class="match">
+                    <div class="team team1 loser">
+                      <div class="slot-team-image-container fixed-candidate"><img
+                          class="team-image night-only"><img
+                          class="team-image day-only"></div><span class="team-name text-ellipsis">Team8</span><span
+                        class="result">0</span>
+                    </div>
+                    <div class="team team2 winner">
+                      <div class="slot-team-image-container fixed-candidate"><img
+                          class="team-image night-only"><img
+                          class="team-image day-only"></div><span class="team-name text-ellipsis">Team2</span><span
+                        class="result">2</span>
+                    </div>
+                  </div>
+                  <div class="exit straight ">
+                    <div class="entry straight "></div>
+                  </div>
+                  <div class="wormhole-entry above">
+                    <div class="entry-connector"></div>
+                  </div>
+                  <div class="wormhole-entry below">
+                    <div class="entry-connector"></div>
+                  </div>
+                </div>
+                <div class="slot-wrapper" style="top: 123px;">
+                  <div class="match">
+                    <div class="team team1 winner">
+                      <div class="slot-team-image-container fixed-candidate"><img
+                          class="team-image night-only"><img
+                          class="team-image day-only"></div><span class="team-name text-ellipsis">Team7</span><span
+                        class="result">2</span>
+                    </div>
+                    <div class="team team2 loser">
+                      <div class="slot-team-image-container fixed-candidate"><img
+                          class="team-image night-only"><img
+                          class="team-image day-only"></div><span class="team-name text-ellipsis">Team6</span><span
+                        class="result">1</span>
+                    </div>
+                  </div>
+                  <div class="exit straight ">
+                    <div class="entry straight "></div>
+                  </div>
+                  <div class="wormhole-entry above">
+                    <div class="entry-connector"></div>
+                  </div>
+                  <div class="wormhole-entry below">
+                    <div class="entry-connector"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="round">
+              <div class="round-header" title="Collapse round" style="top: 0px;">Lower semi-finals</div>
+              <div class="slots" style="height: 178px;">
+                <div class="slot-wrapper" style="top: 20px;">
+                  <div class="match">
+                    <div class="team team1 winner">
+                      <div class="slot-team-image-container fixed-candidate"><img
+                          class="team-image night-only"><img
+                          class="team-image day-only"></div><span class="team-name text-ellipsis">Team4</span><span
+                        class="result">2</span>
+                    </div>
+                    <div class="team team2 loser">
+                      <div class="slot-team-image-container fixed-candidate"><img
+                          class="team-image night-only"><img
+                          class="team-image day-only"></div><span class="team-name text-ellipsis">Team2</span><span
+                        class="result">0</span>
+                    </div>
+                  </div>
+                  <div class="exit down " style="height: 38px;">
+                    <div class="entry down "></div>
+                  </div>
+                  <div class="wormhole-entry above">
+                    <div class="entry-connector"></div>
+                  </div>
+                </div>
+                <div class="slot-wrapper" style="top: 123px;">
+                  <div class="match">
+                    <div class="team team1 loser">
+                      <div class="slot-team-image-container fixed-candidate"><img
+                          class="team-image night-only"><img
+                          class="team-image day-only"></div><span class="team-name text-ellipsis">Team5</span><span
+                        class="result">0</span>
+                    </div>
+                    <div class="team team2 winner">
+                      <div class="slot-team-image-container fixed-candidate"><img
+                          class="team-image night-only"><img
+                          class="team-image day-only"></div><span class="team-name text-ellipsis">Team7</span><span
+                        class="result">2</span>
+                    </div>
+                  </div>
+                  <div class="exit up " style="height: 39px;">
+                    <div class="entry up "></div>
+                  </div>
+                  <div class="wormhole-entry above">
+                    <div class="entry-connector"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="round">
+              <div class="round-header" title="Collapse round" style="top: 0px;">Lower final</div>
+              <div class="slots" style="height: 126px;">
+                <div class="slot-wrapper" style="top: 71px;">
+                  <div class="match">
+                    <div class="team team1 loser">
+                      <div class="slot-team-image-container fixed-candidate"><img
+                          class="team-image night-only"><img
+                          class="team-image day-only"></div><span class="team-name text-ellipsis">Team4</span><span
+                        class="result">1</span>
+                    </div>
+                    <div class="team team2 winner">
+                      <div class="slot-team-image-container fixed-candidate"><img
+                          class="team-image night-only"><img
+                          class="team-image day-only"></div><span class="team-name text-ellipsis">Team7</span><span
+                        class="winner-icon fa fa-long-arrow-right"></span><span class="result">2</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div><iframe class="iframe-height-listener"></iframe>
+      </div> -->
+
+    <script src="/public/js/bracket.js"></script>
+      
     </body>
 </html>
