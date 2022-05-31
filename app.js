@@ -1,32 +1,23 @@
- // "type": "module" in package.json to use import in .js files
-// import { engine } from 'express-handlebars';
-// import express from 'express'
-// import compression from 'compression' 
-
 const express = require('express')
 const { engine } = require('express-handlebars');
 const compression = require('compression');
 const path = require('path')
-
 const app = express()
-const router = express.Router({caseSensitive:true});
-
-app.use(express.static('public'))
-
-app.engine('hbs', engine({ extname: '.hbs'}));
-app.set('view engine', 'hbs');
 let port = process.env.PORT || '3000';
 
 const server = app.listen(port, () => { console.log("Περιμένω αιτήματα στο port " + port) });
-
-app.use(express.urlencoded({ extended: false }));
-
 const routes = require('./routes/patras--league-routes');
+const model = require('./model/patras--league-model-pg-db.js');
 
+app.use(express.static('public'))
+app.engine('hbs', engine({ extname: '.hbs'}));
+app.set('view engine', 'hbs');
+app.use(express.urlencoded({ extended: false }));
 app.use(compression()); //Compress all routes
 app.use('/', routes);
 
-const model = require('./model/patras--league-model-pg-db.js');
+
+  
 
 // router.get('/afterregister',(req, res) => res.render('index',{style:["index"],layout:false}))
 // app.use('/', router);
@@ -53,9 +44,6 @@ const model = require('./model/patras--league-model-pg-db.js');
 //     style: ["signed-manager-main","team-layout-management","alert"]})
 // });
 
-// app.get('/afterregister', (req, res) => {
-//   res.render('index',{aftersignup:true,loggedin :false, style:["modal","loginstyle","index",'alert2']})
-//   });
 
 
 // app.post("/signup", (req, res) => {

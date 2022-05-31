@@ -1,181 +1,3 @@
-
-// const routes = [
-//     {
-//         pageName:"Matches",
-//         path: "/public/html/matches.html",
-//         icon: "fa fa-futbol-o"
-//     },
-//     {
-//         pageName:"Teams",
-//         path: "/public/html/teams.html",
-//         icon: "fa fa-users"
-//     },
-//     {
-//         pageName:"Scores",
-//         path: "/public/html/scores.html",
-//         icon: "fa fa-th"
-//     },
-//     {
-//         pageName:"Statistics",
-//         path: "/public/html/statistics.html",
-//         icon: "fa fa-bar-chart"
-//     },
-//     {
-//         pageName:"Players",
-//         path: "/public/html/players.html",
-//         icon: "fa fa-user"
-//     }
-// ];
-// window.addEventListener('load', () => {
-//     navbar("index");
-// })
-// function navbar(activePage){
-//     navContainer = document.querySelector(".navbar");
-
-//     navCenterPanel = document.createElement('div');
-//     navCenterPanel.className = 'nav-center-left';
-
-
-//     sidePanel = document.createElement('div');
-//     sidePanel.className = 'sidepanel';
-//     sidePanel.id = 'mySidepanel';
-    
-//     aElem = document.createElement('a');
-//     aElem.className  = 'closebtn';
-//     aElem.href = 'javascript:void(0)';
-//     aElem.setAttribute('onclick', openNav);
-//     aElem.innerHTML = "&times;";
-//     sidePanel.appendChild(aElem);
-
-//     for(var route of routes){
-//         aElem = document.createElement('a');
-//         aElem.href = route.path;
-//         aElem.innerHTML = route.pageName;
-//         sidePanel.appendChild(aElem);
-
-//         div = document.createElement('div');
-//         div.className = 'navlink';
-
-//         a = document.createElement('a');
-//         a.href = route.path;
-//         a.innerHTML = " " + route.pageName;
-
-//         i = document.createElement('i');
-//         i.className = route.icon;
-//         i.setAttribute('aria-hidden',true);
-//         a.prepend(i);
-//         div.appendChild(a);
-
-//         navCenterPanel.appendChild(div);
-//     }
-
-//     navContainer.appendChild(sidePanel);
-
-//     button = document.createElement('button');
-//     button.className = "header-icon";
-//     button.id = "mobile-nav-open";
-//     button.setAttribute('onclick',openNav);
-
-//     btnImage = document.createElement('img');
-//     btnImage.id = "menu-svg";
-//     btnImage.src = "/public/images/menu_icon.svg";
-
-//     button.appendChild(btnImage);
-//     navContainer.appendChild(button);
-
-//     logoPanel = document.createElement('div')
-//     logoPanel.className = "navbar-logo";
-
-//     img = document.createElement('img')
-//     img.src = "/public/images/Logo@2x.png";
-//     img.width = "59";
-//     img.height = "59";
-
-//     link = document.createElement('a');
-//     link.href = "/public/html/index.html";
-//     link.className = "nav-item nav-button nav-wide";
-//     link.innerHTML = "Patras League";
-
-//     logoPanel.appendChild(img);
-//     logoPanel.appendChild(link);
-
-//     navContainer.appendChild(logoPanel);
-//     navContainer.appendChild(navCenterPanel);
-    
-//     navRightContainer = document.createElement('div');
-//     navRightContainer.className = 'nav-right';
-
-//     ul = document.createElement('ul');
-
-//     li = document.createElement('li');
-
-//     signInBtn = document.createElement('button');
-//     signInBtn.className = "sign-in";
-    
-
-//     signInLink = document.createElement('a');
-//     signInLink.href = "#"
-
-//     signInImage = document.createElement('img');
-//     signInImage.src = "/public/images/football-icon.svg";
-
-//     p = document.createElement('p');
-
-//     strong = document.createElement('strong');
-//     strong.innerHTML = "Sign Up";
-
-//     p.appendChild(strong);
-
-//     signInLink.appendChild(signInImage);
-//     signInLink.appendChild(p);
-
-//     signInBtn.appendChild(signInLink);
-
-//     li.appendChild(signInBtn);
-
-//     ul.appendChild(li);
-
-//     li = document.createElement('li');
-
-//     signInBtn = document.createElement('button');
-//     signInBtn.className = "sign-in";
-//     signInBtn.id = "signinbtn"
-
-//     signInLink = document.createElement('a');
-//     signInLink.href = "#"
-
-//     signInImage = document.createElement('img');
-//     signInImage.src = "/public/images/login-icon.svg";
-
-//     p = document.createElement('p');
-
-//     strong = document.createElement('strong');
-//     strong.innerHTML = "Log in";
-
-//     p.appendChild(strong);
-
-//     signInLink.appendChild(signInImage);
-//     signInLink.appendChild(p);
-
-//     signInBtn.appendChild(signInLink);
-
-//     li.appendChild(signInBtn);
-
-//     ul.appendChild(li);
-
-//     navRightContainer.appendChild(ul);
-
-//     navContainer.appendChild(navRightContainer);
-
-// }
-
-// function openNav() {
-//     document.getElementById("mySidepanel").style.width = "250px";
-// }
-
-// function closeNav() {
-//     document.getElementById("mySidepanel").style.width = "0";
-// }
 function openNav() {
     document.getElementById("mySidepanel").style.width = "250px";
   }
@@ -186,11 +8,11 @@ window.addEventListener('load', () => {
 document.querySelector(".navbar").innerHTML = `
         <div id="mySidepanel" class="sidepanel">
           <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-          <a href="/public/html/matches.html">MATCHES</a>
-          <a href="/public/html/teams.html">TEAMS</a>
-          <a href="/public/html/scores.html">SCORES</a>
-          <a href="/public/html/statistics.html">STATISTICS</a>
-          <a href="/public/html/players.html">PLAYERS</a>
+          <a href="matches">MATCHES</a>
+          <a href="teams">TEAMS</a>
+          <a href="scores">SCORES</a>
+          <a href="statistics">STATISTICS</a>
+          <a href="players">PLAYERS</a>
         </div>
         <button id="mobile-nav-open" class="header-icon" onclick="openNav()">
           <img id="menu-svg" src="/images/menu_icon.svg">
@@ -208,15 +30,15 @@ document.querySelector(".navbar").innerHTML = `
         
                 <div class="navbar-logo">
                     <img src="/images/Logo@2x.png" alt="" width="59" height="59">
-                    <a href="/public/html/index.html" class="nav-item nav-logoname nav-button nav-wide"> Patras League </a>
+                    <a href="/index" class="nav-item nav-logoname nav-button nav-wide"> Patras League </a>
                 </div>
                 
                 <div class="nav-center-left">
-                    <div class="navlink"><a href="/public/html/matches.html"><i class="fa fa-futbol-o" aria-hidden="true"></i> MATCHES</a></div>
-                    <div class="navlink"><a href="/public/html/teams.html"><i class="fa fa-users" aria-hidden="true"></i> TEAMS</a></div>
-                    <div class="navlink"><a href="/public/html/scores.html"><i class="fa fa-th"></i> SCORES</a></div>
-                    <div class="navlink"><a href="/public/html/statistics.html"><i class="fa fa-bar-chart" aria-hidden="true"></i> STATISTICS</a></div>
-                    <div class="navlink"><a href="/public/html/players.html"><i class="fa fa-user" aria-hidden="true"></i> PLAYERS</a></div>
+                    <div class="navlink"><a href="matches"><i class="fa fa-futbol-o" aria-hidden="true"></i> MATCHES</a></div>
+                    <div class="navlink"><a href="teams"><i class="fa fa-users" aria-hidden="true"></i> TEAMS</a></div>
+                    <div class="navlink"><a href="scores"><i class="fa fa-th"></i> SCORES</a></div>
+                    <div class="navlink"><a href="statistics"><i class="fa fa-bar-chart" aria-hidden="true"></i> STATISTICS</a></div>
+                    <div class="navlink"><a href="players"><i class="fa fa-user" aria-hidden="true"></i> PLAYERS</a></div>
                 </div>
                 <div class="nav-right">
                   <ul>

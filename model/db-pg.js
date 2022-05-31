@@ -23,8 +23,8 @@ const client = new Client({
     user: 'postgres',
     host: 'localhost',
     database: 'league',
-    password: '',//yourpassword
-    port: 5432
+    password: 'koko1234',
+    port: 58592
 });
 
 client.connect((err) => {

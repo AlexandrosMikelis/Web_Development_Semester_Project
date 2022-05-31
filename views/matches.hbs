@@ -1,0 +1,84 @@
+<div id="signinmodal" class="modal-sign"></div>
+<script src="/js/modalView.js"></script>
+<script src="/js/modalService.js"></script>
+
+        
+<div class="semi-navbar">
+  <div class="filters">
+    
+  </div>
+  {{!-- <div class="stages">
+    <select class="stages-selection" required>
+      <option value="" disabled selected> Select Stage</option>
+    </select>
+  </div> --}}
+  {{!-- <div class="bracket-view-container"><a class="view-bracket" href="#bracket"><button>View Bracket</button></a></div> --}}
+</div>
+
+<div class="displays">
+  {{#each match}}
+  <fieldset class="matches-display" data-filter="{{#if this.isLive}}Live{{/if}}{{#if this.isFinished}}Finished{{/if}}{{#unless this.isFinished}}{{#unless this.isLive}}Upcoming{{/unless}}{{/unless}}">
+    <div style="display: flex;justify-content: space-between;">
+      <div class="display-title">
+      Patras League Playoffs Match # {{this.id}}
+    </div>
+    {{#if this.isLive}}<h4 style="color: red;line-height:0.1"> • Live </h4>{{/if}}
+    {{#if this.isFinished}}<h4 style="color: grey;line-height:0.1"> Finished </h4>{{/if}}
+    {{#unless this.isFinished}}{{#unless this.isLive}}<h4 style="color: black;line-height:0.1"> Upcoming </h4>{{/unless}}{{/unless}}
+    
+    
+    </div>
+    
+    <div class="flexbox">
+      <div style="align-self:center">
+        <div class="event-time">{{this.date}}</div>
+        <br>
+        <div class="event-time" style="text-align:center">{{this.time}}</div>
+      </div>
+      
+      <div class="info">
+        <div class="team">
+          <img class="team-logo" src="{{this.team1.logo}}" width="20" height="20">
+          <div class="event-team">{{this.team1.name}}</div>
+          <div class="event-score">-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(-)</div>
+        </div>
+        <div class="team">
+          <img class="team-logo" src="{{this.team2.logo}}" width="20" height="20">
+          <div class="event-team">{{this.team2.name}}</div>
+          <div class="event-score">-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(-)</div>
+        </div>
+      </div>
+    </div>
+  </fieldset>
+  {{/each}}
+</div>
+<script src="/js/matches.js"></script>        
+
+        {{!-- <div class="tournament-brackets">
+          <ul class="bracket bracket-1">
+            <li class="team-item"><img src="/public/images/team-logos/boston.jpg" style="height:20px"> <span style="font-family:Black Ops One">VS</span> C2</li>
+            <li class="team-item">D1 <span style="font-family:Black Ops One">VS</span> 3BEF</li>
+            <li class="team-item">B1 <span style="font-family:Black Ops One">VS</span> 3ACD</li>
+            <li class="team-item">F1 <span style="font-family:Black Ops One">VS</span> E2</li>
+            <li class="team-item">C1 <span style="font-family:Black Ops One">VS</span> 3ABF</li>
+            <li class="team-item">E1 <span style="font-family:Black Ops One">VS</span> D2</li>
+            <li class="team-item">A1 <span style="font-family:Black Ops One">VS</span> 3CDE</li>
+            <li class="team-item">B2 <span style="font-family:Black Ops One">VS</span> F2</li>
+          </ul>  
+          <ul class="bracket bracket-2">
+            <li class="team-item">QF1 <span style="font-family:Black Ops One">VS</span> QF2</li>
+            <li class="team-item">QF3 <span style="font-family:Black Ops One">VS</span> QF4</li>
+            <li class="team-item">QF5 <span style="font-family:Black Ops One">VS</span> QF6</li>
+            <li class="team-item">QF7 <span style="font-family:Black Ops One">VS</span> QF8</li>
+          </ul>  
+          <ul class="bracket bracket-3">
+            <li class="team-item">SF1 <span style="font-family:Black Ops One">VS</span> SF2</li>
+            <li class="team-item">SF3 <span style="font-family:Black Ops One">VS</span> SF4</li>
+          </ul>  
+          <ul class="bracket bracket-4">
+            <li class="team-item">F1 <span style="font-family:Black Ops One">VS</span> F2</li>
+          </ul>  
+              
+          <ul class="bracket bracket-5">
+                    
+          </ul>   --}}

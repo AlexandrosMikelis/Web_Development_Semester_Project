@@ -1,52 +1,39 @@
-const Teams = [
-    {
-        "Name": "Team 1",
-        "Logo": "/public/images/Logo@2x.png"
-    },
-    {
-        "Name": "Team 2",
-        "Logo": "/public/images/Logo@2x.png"
-    },
-    {
-        "Name": "Team 3",
-        "Logo": "/public/images/Logo@2x.png"
-    },
-    {
-        "Name": "Team 4",
-        "Logo": "/public/images/Logo@2x.png"
-    },
-    {
-        "Name": "Team 5",
-        "Logo": "/public/images/Logo@2x.png"
-    },
-    {
-        "Name": "Team 6",
-        "Logo": "/public/images/Logo@2x.png"
-    },
-    {
-        "Name": "Team 7",
-        "Logo": "/public/images/Logo@2x.png"
-    },
-    {
-        "Name": "Team 8",
-        "Logo": "/public/images/Logo@2x.png"
-    },
-    
-]
-
-const filters = ["All", "Live", "Upcoming", "Finished", "Odds"]
+const filters = ["All", "Live", "Upcoming", "Finished"]
 const stages = ["Knockouts", "Groups", "Play-ins", "Play-offs"]
-
 playoff_matches = 0;
 
+
 window.addEventListener("load", ()=> {
-    console.log("here1");
     loadFilters(filters);
     loadStages(stages);
-    shuffleTeams(Teams);
-    createDisplays(Teams);
-    createBrackets(Teams);
+    // shuffleTeams(Teams);
+    // createDisplays(Teams);
+    // createBrackets(Teams);
 })
+function applyFilter(selectedFilter) {
+    
+    console.log(selectedFilter);
+    let itemsToHide = document.querySelectorAll(`.displays .matches-display:not([data-filter='${selectedFilter}'])`);
+    let itemsToShow = document.querySelectorAll(`.displays [data-filter='${selectedFilter}']`);
+    console.log(itemsToHide);
+    console.log(itemsToShow);
+    if (selectedFilter == 'All') {
+      itemsToHide = [];
+      itemsToShow = document.querySelectorAll('.displays [data-filter]');
+      
+    }
+
+    itemsToHide.forEach(el => {
+      el.classList.add('hide');
+      el.classList.remove('show');
+    });
+
+    itemsToShow.forEach(el => {
+      el.classList.remove('hide');
+      el.classList.add('show'); 
+    });
+
+  }
 
 function loadStages(stages){
     var stageCounter=0;
@@ -72,11 +59,14 @@ function shuffleTeams(Teams){
 }
 
 function loadFilters(filters){
+    id = 0;
     filtersPanel = document.querySelector('.filters');
     for(const filter of filters){
-        newFilter = document.createElement('div');
-        newFilter.className = "filter-" + filter.toLowerCase();
+        newFilter = document.createElement('button');
+        newFilter.className = "filter";
         newFilter.innerHTML = filter;
+        newFilter.setAttribute('onclick', 'applyFilter("' + filter+ '")');
+        newFilter.setAttribute('data-filter',filter);
         filtersPanel.appendChild(newFilter);
     }
 }
