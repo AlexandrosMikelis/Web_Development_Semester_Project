@@ -1,13 +1,13 @@
 
 
-.nav-center-left > :first-child a{
+/* .nav-center-left > :first-child a{
     color: purple !important;
-}
+} */
 
-.nav-center-left > :first-child {
+/* .nav-center-left > :first-child {
     background: rgba(0, 0, 0, 0.1);
     margin: 0 2px;
-}
+} */
 
 .matches-display{
     margin: 5% 0% 0% 25%;

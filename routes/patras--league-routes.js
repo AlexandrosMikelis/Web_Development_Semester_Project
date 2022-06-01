@@ -100,15 +100,15 @@ router.get('/', (req, res) => {
   });
 
 router.get('/index', (req, res) => {
-  res.render('index',{aftersignup:false,loggedin :false, style:["modal","loginstyle","index",'alert2']})
+  res.render('index',{aftersignup:false,loggedin :false, style:["modal","loginstyle","navbar","index",'alert2']})
   });
 
 router.get('/matches',  (req, res) => {
-  res.render('matches',{aftersignup:false,match :matches,loggedin :false, style:["modal","loginstyle","index",'matches']})
+  res.render('matches',{aftersignup:false,match :matches,loggedin :false, style:["modal","loginstyle","navbar",'matches']})
   });
 
 router.get('/teams',  (req, res) => {
-    res.render('teams',{aftersignup:false,loggedin :false, style:["modal","loginstyle","index",'player']})
+    res.render('teams',{aftersignup:false,loggedin :false, style:["modal","loginstyle","index",'players']})
     });
 
 router.get('/scores',  (req, res) => {
@@ -116,7 +116,7 @@ router.get('/scores',  (req, res) => {
       });
 
 router.get('/statistics',  (req, res) => {
-    res.render('statistics',{aftersignup:false,loggedin :false, style:["modal","loginstyle","index",'matches']})
+    res.render('statistics',{aftersignup:false,loggedin :false, style:["modal","loginstyle","index",'statistics']})
     });
   
 router.get('/players',  (req, res) => {
@@ -129,7 +129,7 @@ router.get('/manager-register', (req, res) => {
     });
 
 //##############################################################
-router.get('/',  leagueController.addNewUser)
+router.get('/addUser',  leagueController.addNewUser);
 //##############################################################
 
 module.exports = router;

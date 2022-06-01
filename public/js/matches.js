@@ -1,11 +1,10 @@
-const filters = ["All", "Live", "Upcoming", "Finished"]
-const stages = ["Knockouts", "Groups", "Play-ins", "Play-offs"]
+const filters = ["All", "Live", "Upcoming", "Finished"];
+const stages = ["Knockouts", "Groups", "Play-ins", "Play-offs"];
 playoff_matches = 0;
-
 
 window.addEventListener("load", ()=> {
     loadFilters(filters);
-    loadStages(stages);
+    // loadStages(stages);
     // shuffleTeams(Teams);
     // createDisplays(Teams);
     // createBrackets(Teams);

@@ -1,0 +1,28 @@
+html {
+    scroll-behavior:smooth ;
+  }
+  
+html,body {
+    overflow-x:hidden;
+    height: 100%;
+    width: 100%;
+  }
+  
+body{
+    font-family: "Raleway", sans-serif;
+    margin: 0;
+  }
+  
+a {
+    color: black;
+    text-decoration: none;
+}
+
+.pl-input {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    margin-top: 5px;
+    font-size: large;
+}
