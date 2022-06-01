@@ -11,8 +11,9 @@
 
  <div>
     <p style="text-align:center ;font-size:xxx-large; color:white; font-weight:bolder">{{teamname}}</p>
-    <button class="submit-team-btn" onclick="location.href='/submit-status'"> Submit Team </button>
- </div>
+    {{!-- <button class="submit-team-btn" onclick="location.href='/submit-status'"> Submit Team </button> --}}
+ </div>    
+
 {{/if}}
  <div class="big-cont">
             <fieldset class="co">
@@ -27,8 +28,8 @@
                         <option value="1">Add Player</option>
                         <option value="2">Remove Player</option>
                         <option value="3">Assign Positions</option>
-                        <option value="4">Manage Fields</option>
-                        <option value="5">Inspection Mode</option>
+                        <option value="4">Manage</option>
+                        <option value="5">Inspect</option>
                         <option value="6">Clear all</option>
                     </select>
                 </div> 
@@ -52,15 +53,15 @@
                 </legend>
                 <form class="mp-form" style="font-size: x-large;">  
                     <div class="mp-form">
-                        <label for="name">1</label>
+                        {{!-- <label for="name">1</label> --}}
                         <input type="text" name="Field1" placeholder="Soccer field Name" required>
                     </div>
                     <div class="mp-form">
-                        <label for="name">2</label>
+                        {{!-- <label for="name">2</label> --}}
                         <input type="text"  placeholder="Soccer field Name" required>
                     </div>
                     <div class="mp-form">
-                        <label for="name">2</label>
+                        {{!-- <label for="name">2</label> --}}
                         <input type="text"  placeholder="Soccer field Name" required>
                     </div>
                 </form>
@@ -77,8 +78,17 @@
                     <h2 style="padding: 0; margin: 0;">Team-Lineup</h2>
                     </div> 
                 </legend>
-                <form class="mp-form"> 
+                <form class="mp-form" method="POST" action="/submit1-status"> 
+                   
+                    {{#each players}}
                     <div class="mp-form">
+                    <label for="name"></label>
+                    <input type="text" name="Player{{@index}}" value="{{FullName}}" placeholder="Player_1 Name" required>
+                    </div>
+                    
+                    {{/each}}
+                    
+                    {{!-- <div class="mp-form">
                     <label for="name">1</label>
                     <input type="text" name="Player1" placeholder="Player_1 Name" required>
                     </div>
@@ -130,7 +140,7 @@
 
                     <div class="mp-form">
                     <label for="name">11</label>
-                    <input type="text" name="Player11" placeholder="Player_11 Name" required>
+                    <input type="text" name="Player11" placeholder="Player_11 Name" required> --}}
                 </form>
             </fieldset>
             <br>
@@ -143,21 +153,29 @@
                         <h2 style="padding: 0; margin: 0;">Substitutes</h2>
                     </div> 
                 </legend>
-                <form class="mp-form"> 
-                    <div class="mp-form">
-                    <label for="name">1</label>
-                    <input type="text" name="Sub1" placeholder="Substitute_1 Name" >
-                    </div>
-    
-                    <div class="mp-form">
+                <form class="mp-form" method="POST" action="/submit2-status"> 
+                    
+                    <div class="mp-form" style="display:none">
                     <label for="name">2</label>
-                    <input type="text" name="Sub2" placeholder="Substitute_2 Name" >
+                    <input type="text" name="Sub" placeholder="Substitute Name" >
                     </div>
-    
+
+                    {{!-- {{#each subs}}
+
+                    <div class="mp-form">
+                        <label for="name"></label>
+                        <input type="text" name="Sub{{@index}}" value="{{FullName}}" placeholder="Substitute_1 Name" >
+                    </div>
+
+                    {{/each}} --}}
+
+                     
+
+                    {{!--
                     <div class="mp-form">
                         <label for="name">3</label>
                         <input type="text" name="Sub3"  placeholder="Substitute_3 Name" >
-                    </div>
+                    </div> --}}
     
                 </form>
                 <div id="add-sub" class="form-title add-sub">
@@ -175,8 +193,18 @@
                         <h2 style="padding: 0; margin: 0;">Positions</h2>
                     </div> 
                 </legend>
-                <form class="mp-form"> 
+                <form class="mp-form" method="POST" action="/submit3-status"> 
+
+                    {{#each players}}
+                    
                     <div class="mp-form">
+                        {{!-- <label for="name">1</label> --}}
+                        <input type="text" name="Pos{{@index}}" value="{{PlayerPosition}}" required>
+                    </div>
+                    
+                    {{/each}}
+
+                    {{!-- <div class="mp-form">
                     <label for="name">1</label>
                     <input type="text" name="Pos1"  placeholder="Player_1 Position" required>
                     </div>
@@ -230,7 +258,7 @@
                         <label for="name">11</label>
                         <input type="text" name="Pos11" placeholder="Player_11 Position" required>
                     </div>
-  
+   --}}
                 </form>
                 <div id="add-sub" class="form-title add-sub">
                     <i class="fa-solid fa-user-plus"></i>
@@ -240,7 +268,9 @@
                 
                 
         </div>
-        
-              
+     
+              <button class="submit-team-btn" onclick="Sumbit1()" > Submit Players </button>
+              <button class="submit-team-btn" onclick="Sumbit2()"> Submit Positions </button>
+              <button class="submit-team-btn" onclick="Sumbit3()"> Submit Substitutes </button>
 
         <script src="/js/team-layout.js"></script>

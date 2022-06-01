@@ -37,17 +37,19 @@
       <script src="/public/js/modalView.js"></script>
       <script src="/public/js/modalService.js"></script> --}}
     {{!-- {{/if}} --}}
-    {{#if loggedin}}
-    <div class="navb"></div>
-      <script src="/js/manager-nav.js"></script>
-    
+    {{#if notadmin}}
+        {{#if loggedin}}
+        <div class="navb"></div>
+        <script src="/js/manager-nav.js"></script>
+        
 
-    {{else}}
-    <div class="navbar"></div>
-        <script src="/js/components/navbar.js"></script>
-    {{!-- {{else}}
-    {{> notLoggedinPartial partialContext}}  --}}
+        {{else}}
+        <div class="navbar"></div>
+            <script src="/js/navbar.js"></script>
+        {{!-- {{else}}
+        {{> notLoggedinPartial partialContext}}  --}}
 
+        {{/if}}
     {{/if}}
 
     {{#if mainpage}}

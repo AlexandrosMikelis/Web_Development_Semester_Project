@@ -2,16 +2,15 @@
 
 /* .nav-center-left > :first-child a{
     color: purple !important;
-} */
+}
 
-/* .nav-center-left > :first-child {
+.nav-center-left > :first-child {
     background: rgba(0, 0, 0, 0.1);
     margin: 0 2px;
-} */
+}
 
 .matches-display{
-    margin: 5% 0% 0% 25%;
-    width: 50%;
+    margin: 5% 10%;
 }
 
 .event-time{
@@ -117,15 +116,15 @@ option {
     display: flex;
     position:relative; 
     gap: 1%;
-    width: 70%;
-    justify-content: flex-start;
+    top:10%;
+    left: 10%;
+    width: 40%;
 }  
 .stages-selection{
   width: 40%;
   height: 30px;
 }
 .semi-navbar{
-  justify-content: space-around;
   margin-top: 50px;
   width: 100%;
   display: flex;
@@ -136,32 +135,27 @@ option {
 .bracket-view-container{
   width: 15%;
 }
-button[class="filter"]{
-    font-size: 100%;
+div[class^="filter-"]{
+    font-size: 19px;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     border: 1px solid gray;
-    width: 15%;
-    height: 40px;
+    width: 10%;
+    height: 30px;
     text-align: center;
     line-height: 1.5;
-    border-radius: 9px;
+    border-radius: 6px;
     background-color: whitesmoke;
     padding: 0 1%;
 } 
 
-button[class="filter"]:hover{
-    background-color: #EB6E34;
-    color: white;
+div[class^="filter-"]:hover{
+    background-color: gray;
     cursor: pointer;
 }
-button[class="filter"]:focus{
-  background-color: #EB6E34;
-  color: white;
-}
 
-body {
-    background-color: #e8e7e7;
-}
+/* body {
+    background-color: lightgray;
+} */
 
 .wrapper {
     display: flex;
@@ -411,7 +405,7 @@ body {
 
   .bracket:last-of-type .team-item:after{
     display: none;
-  }
+  } */
 
   .team-item time {
     display: inline-block;
@@ -420,56 +414,276 @@ body {
     padding: 0 .6rem;
   }
 
-/*  Needed for filters */
-
-.hide { /* You can play with the seconds to change the "animation" */
-  animation: hide .15s ease 0s 1 normal forwards;
-  transform-origin: center;
+  .slotted-bracket {
+    display: flex;
+    flex-direction: column;
+    position: relative;
 }
-.show { /* You can play with the seconds to change the "animation" */
-    animation: show .15s ease 0s 1 normal forwards;    
-    transform-origin: center;
+.slotted-bracket .bracket-tier-header {
+    font-size: 12px;
+    opacity: .65;
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    height: 32px;
 }
 
-@keyframes hide {
-  0%{
-    transform: scale(1);        
-  }
-  25%{
-    transform: scale(0.75);        
-  }
-  50%{
-    transform: scale(0.5);        
-  }
-  75%{
-    transform: scale(0.25);        
-  }
-  100% {
-    transform: scale(0);        
-    width: 0;
-    height: 0;
-    margin: 0;
-  }
+.slotted-bracket .rounds {
+    display: flex;
 }
-@keyframes show {
-  0%{
-    transform: scale(0);     
-    width: 0;
-    height: 0;
-    margin: 0;   
-  }
-  25%{
-    transform: scale(0.25);        
-  }
-  50%{
-    transform: scale(0.5);        
-  }
-  75%{
-    transform: scale(0.75);        
-  }
-  100% {
-    transform: scale(1);    
-  }
-}  
 
-  
+.slotted-bracket .round {
+    min-width: 130px;
+    padding-right: 20px;
+    transition: .2s ease;
+}
+
+.slotted-bracket .round .round-header {
+    font-size: 12px;
+    font-weight: 700;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slotted-bracket .round .slots {
+    position: relative;
+}
+
+.slotted-bracket .round .slots .slot-wrapper {
+    position: absolute;
+    height: 55px;
+    width: 130px;
+    transition: .2s ease;
+}
+
+.slotted-bracket .round .slots .slot-wrapper .match {
+    box-shadow: 0 1px 2px 0 rgb(50 50 50 / 40%);
+    background-color: #fff;
+    box-shadow: 0 1px 5px 0 rgb(0 0 0 / 16%), 0 1px 2px 0 rgb(0 0 0 / 8%);
+    width: 100%;
+    border-radius: 2px;
+    height: 55px;
+    display: flex;
+    flex-direction: column;
+    font-size: 11px;
+    z-index: 2;
+    position: relative;
+}
+
+.slotted-bracket .round .slots .slot-wrapper .match .winner {
+    font-weight: 700;
+    border-left: 3px solid #08a500;
+}
+
+.slotted-bracket .round .slots .slot-wrapper .match .team1 {
+    border-radius: 2px 0 0 0;
+}
+
+.slotted-bracket .round .slots .team {
+    display: flex;
+    padding: 0 4px;
+    height: 100%;
+    align-items: center;
+}
+
+.slotted-bracket .round .slots .slot-team-image-container {
+    height: 16px;
+    width: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    margin-right: 4px;
+    flex: 0 0 16px;
+}
+
+.slotted-bracket .round .slots .team-image {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.night-only {
+    display: none!important;
+}
+
+img {
+    border-style: none;
+}
+
+.slotted-bracket .round .slots .slot-wrapper .match .loser {
+    color: rgba(53,53,53,.4);
+    border-left: 3px solid #e40a0a;
+}
+
+.slotted-bracket .round .slots .slot-wrapper .match .team2 {
+    border-radius: 0 0 0 2px;
+    border-top: 1px solid hsla(0,0%,80%,.65);
+}
+
+.slotted-bracket .round .slots .team {
+    display: flex;
+    padding: 0 4px;
+    height: 100%;
+    align-items: center;
+}
+
+.slotted-bracket .round .slots .slot-team-image-container {
+    height: 16px;
+    width: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    margin-right: 4px;
+    flex: 0 0 16px;
+}
+
+.slotted-bracket .round .slots .exit.down {
+    top: calc(50% - 1px);
+    border-top: 1px solid hsla(0,0%,80%,.65);
+    border-right: 1px solid hsla(0,0%,80%,.65);
+}
+
+.slotted-bracket .round .slots .exit {
+    z-index: 1;
+    position: absolute;
+    width: 5px;
+    right: -6px;
+}
+
+.slotted-bracket .round .slots .exit.up {
+    bottom: 50%;
+    border-bottom: 1px solid hsla(0,0%,80%,.65);
+    border-right: 1px solid hsla(0,0%,80%,.65);
+}
+
+.slotted-bracket .round .slots .exit {
+    z-index: 1;
+    position: absolute;
+    width: 5px;
+    right: -6px;
+}
+
+.slotted-bracket .round .slots .entry.up {
+    top: 0;
+    border-top: 1px solid hsla(0,0%,80%,.65);
+}
+
+.slotted-bracket .round .slots .entry {
+    z-index: 1;
+    position: absolute;
+    bottom: 0;
+    width: 15px;
+    right: -16px;
+}
+
+.slotted-bracket .round .slots .slot-wrapper .match .result {
+    float: right;
+}
+
+.slotted-bracket .round .slots .slot-wrapper .match .loser {
+    color: rgba(53,53,53,.4);
+    border-left: 3px solid #e40a0a;
+}
+
+.slotted-bracket .round .slots .loser-icon, .slotted-bracket .round .slots .winner-icon {
+    margin-right: 5px;
+    font-weight: 400;
+}
+.fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.slotted-bracket .round .slots .entry.down {
+    border-bottom: 1px solid hsla(0,0%,80%,.65);
+}
+.slotted-bracket .round .slots .entry {
+    z-index: 1;
+    position: absolute;
+    bottom: 0;
+    width: 15px;
+    right: -16px;
+}
+.slotted-bracket .round .slots .exit.straight {
+    top: calc(50% - 1px);
+    width: 6px;
+    
+    border-top: 1px solid hsla(0,0%,80%,.65);
+}
+
+.slotted-bracket .round .slots .exit {
+    z-index: 1;
+    position: absolute;
+    width: 5px;
+    right: -6px;
+}
+.slotted-bracket .round .slots .entry.straight {
+    top: -1px;
+    border-top: 1px solid hsla(0,0%,80%,.65);
+    width: 17px;
+    right: -17px;
+}
+
+.slotted-bracket .round .slots .entry {
+    z-index: 1;
+    position: absolute;
+    bottom: 0;
+    width: 15px;
+    right: -16px;
+}
+.slotted-bracket .round .slots .slot-wrapper .match .winner {
+  font-weight: 700;
+  border-left: 3px solid #08a500;
+}
+
+.slotted-bracket .round .slots .slot-wrapper .match .team1 {
+  border-radius: 2px 0 0 0;
+}
+.slotted-bracket .round .slots .team {
+  display: flex;
+  padding: 0 4px;
+  height: 100%;
+  align-items: center;
+}
+.slotted-bracket .round .slots .slot-team-image-container {
+  height: 16px;
+  width: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  margin-right: 4px;
+  flex: 0 0 16px;
+}
+.slotted-bracket .round .slots .slot-wrapper .match .team-name {
+  flex: 1 auto;
+}
+
+.text-ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.slotted-bracket .round .slots .slot-wrapper .match .result {
+  float: right;
+}
+
+.slotted-bracket .round .slots .slot-wrapper .match .winner {
+  font-weight: 700;
+  border-left: 3px solid #08a500;
+}
+.slotted-bracket .rounds {
+  display: flex;
+}
+
+body{
+  background-color: black;
+}

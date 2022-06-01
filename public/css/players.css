@@ -1,5 +1,5 @@
 body{
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(5, 22, 26);
     color: white;
 }
 
@@ -37,12 +37,16 @@ div head{
     max-height: 400px;
     width:60%;
     min-width: 75%;
-    margin-right: 1em;
-    border-right:8px solid rgb(255, 255, 255);
-    border-top:8px solid rgb(255, 255, 255);
-    border-radius: 66px;
+    margin-right: 1em;  
+    border-right:8px solid rgb(255, 225, 0);
+    border-left:8px solid  rgb(94, 94, 33);
+
+    background: linear-gradient(45deg, #181c1c 0%, rgb(70, 62, 17) 100%, white 100%);
+    
+    border-radius: 99px;
     justify-items: center;
 }
+
 @media only screen and (min-width: 760px) {
     .top-scorrer{
         max-width: 100%;
@@ -60,6 +64,8 @@ div head{
     grid-template-rows: 1fr;
     grid-template-columns: 1fr 1fr ;
     width: 100%;
+    margin-left: 30%;
+    padding-bottom:5%;
     row-gap: 10px;
     justify-items: start;
 }
@@ -109,7 +115,7 @@ span img{
 }
 
 .all-players > div:hover .playerimg{
-    background-color: rgb(237, 237, 237);
+    background-color: rgb(42, 38, 38);
     color: rgb(252, 0, 0);
     border: 3px solid #00cfc8;
     box-shadow: 0px 7px 15px #537a76;
@@ -118,6 +124,7 @@ span img{
     cursor:pointer;
     z-index: 0;
 }
+
 
 .all-players > div:hover .logoimg{
     transform: translateY(-4px);
@@ -202,6 +209,8 @@ form.search button:hover {
 .hidden-stats{
     display: none;
 }
+
+
 
 
 

@@ -1,42 +1,60 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const app = express();
 const db = require('./model/queries');
-const port = 3000;
 
-app.use(bodyParser.json())
-app.use(
-  bodyParser.urlencoded({
-    extended: true,
-  })
-)
-app.get('/', (request, response) => {
-  response.json({ info: 'Node.js, Express, and Postgres API' })
-})
-app.get('/managers', db.getManagers);
-app.get('/managers/:MngrID', db.getManagerById);
-app.post('/managers',db.createManager);
-app.listen(port, () => { console.log("Περιμένω αιτήματα στο port " + port) });
-// const express = require('express')
-// const { engine } = require('express-handlebars');
-// const compression = require('compression');
-// const path = require('path');
-// const app = express();
-// let port = process.env.PORT || '3000';
-// const routes = require('./routes/patras--league-routes');
-// const model = require('./model/patras--league-model-pg-db.js');
+const express = require('express')
+const { engine } = require('express-handlebars');
+const compression = require('compression');
+const path = require('path')
+const session = require('express-session');
+const dotenv = require('dotenv')
+if (process.env.NODE_ENV !== 'production') {
+    dotenv.config();
+}
 
-// app.use(express.static('public'))
-// app.engine('hbs', engine({ extname: '.hbs'}));
-// app.set('view engine', 'hbs');
-// app.use(express.urlencoded({ extended: false }));
-// app.use(compression()); //Compress all routes
-// app.use('/', routes);
-// app.get('/', (request, response) => {
-//     console.log(response);
-//   })
-// app.listen(port, () => { console.log("Περιμένω αιτήματα στο port " + port) });
-  
+const app = express()
+const router = express.Router({caseSensitive:true});
+
+const MemoryStore = require('memorystore')(session)
+
+app.use(express.static('public'))
+
+app.engine('hbs', engine({ extname: '.hbs'}));
+app.set('view engine', 'hbs');
+
+sess = {
+  name: 'meetme-session',
+  secret: process.env.SESSION_SECRET || 'enterasecrethere', // κλειδί για κρυπτογράφηση του cookie
+  resave: false,
+  saveUninitialized: false,
+  proxy:true,
+  // secureProxy: true,
+  cookie: {
+      maxAge: 24 * 60 * 60 * 1000,
+      sameSite: true,
+      // secure: true // NODE_ENV === 'production'
+  },
+  store: new MemoryStore({ checkPeriod: 86400000 })
+};
+
+if (app.get('env') === 'production') {
+  // app.set('trust proxy', 1) // trust first proxy
+  sess.cookie.secure = true // serve secure cookies
+}
+
+app.use(session(sess));
+
+let port = process.env.PORT || '3000';
+const server = app.listen(port, () => { console.log("Περιμένω αιτήματα στο port " + port) });
+
+app.use(express.urlencoded({ extended: false }));
+
+const routes = require('./routes/patras--league-routes');
+
+app.use(compression()); //Compress all routes
+app.use('/', routes);
+
+const model = require('./model/patras--league-model-pg-db.js');
 
 // router.get('/afterregister',(req, res) => res.render('index',{style:["index"],layout:false}))
 // app.use('/', router);
@@ -49,9 +67,9 @@ app.listen(port, () => { console.log("Περιμένω αιτήματα στο p
 //     res.render('manager-register',{ loggedin : false , style:["modal","loginstyle","index","manager-register"]})
 //   });
 
-// app.get('/', (req, res) => {
-//       res.render('time-selection',{loggedin:true , style: ["signed-manager-main","time-selection"]})
-//     });
+app.get('/s', (req, res) => {
+      res.render('time-selection',{loggedin:true , style: ["signed-manager-main","time-selection"]})
+    });
 
 // app.get('/', (req, res) => {
 //     res.render('signed-manager', { loggedin: true,mainpage : true,
@@ -71,7 +89,7 @@ app.listen(port, () => { console.log("Περιμένω αιτήματα στο p
 //     // βρες τον χρήστη id ή δημιούργησε χρήστη αν δεν υπάρχει
 //     const newuser = {"email":req.body.UserEmail, "password":req.body.UserPass, "id": req.body.UserPass, "firstname":req.body.FirstName, "lastname": req.body.LastName,"address": req.body.Address,"ps": req.body.ZipCode,"phone": req.body.Phone1,"org": req.body.OrgName}
 //     let id="33373"
-//     model.addNewUser(id,newuser,(err, row) => {
+//     model.PPRINT(id,newuser,(err, row) => {
 //     if (err){
 //       console.log(err.message);
 //       // return console.log(err.message);

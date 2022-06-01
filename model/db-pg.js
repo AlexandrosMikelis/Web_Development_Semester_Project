@@ -15,7 +15,7 @@ const client = new Pool({
 client.connect((err) => {
     if (err)
         throw err;
-    else console.log("connected");
+    else console.log("connected to db")
 });
 
 

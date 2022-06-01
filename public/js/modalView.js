@@ -110,7 +110,10 @@ function CreateModal(){
     aLink = document.createElement('a');
     aLink.id = "sign-up";
     aLink.href = "";
-    aLink.innerHTML = "Sign up";
+    aLink.innerHTML = "Sign up"
+    aLink.href = "/manager-register";
+
+    // aLink.href = "/registration-page";
 
     noAccountContainer.appendChild(p);
     noAccountContainer.appendChild(aLink);

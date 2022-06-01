@@ -192,7 +192,9 @@ input:focus {
     height: fit-content;
     width: 20%;
 }
-
+.tl input{
+    width:190%;
+}
 .tl{
     grid-area: c;
     width: 90%;
@@ -297,18 +299,23 @@ label{
 .submit-team-btn{
     display:block;
     margin:auto;
+    margin-bottom: 1.5em;
+    margin-top:-40px;
+    width: 10em;
     height: 2em;
+    color:white;
     border-radius: 9px ;
-    border: 1px solid rgb(141, 38, 38);
+    border: 4px solid rgb(141, 38, 38);
     font-size:xx-large;
-    background-color: rgb(216, 52, 23);
-    box-shadow: 0px 3px 10px rgb(169, 86, 86);
+    background-color: rgb(117, 53, 41);
+    box-shadow: 0px 3px 6px rgb(169, 86, 86);
 }
 
 .submit-team-btn:hover{
     background-color: rgb(219, 146, 117);
     border: none;
     transform: translateY(-2px);
+    cursor: pointer;
     color: whitesmoke;
     box-shadow: 0px 7px 15px black;
     outline: none;
