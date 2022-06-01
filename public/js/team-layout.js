@@ -1,4 +1,51 @@
 
+
+
+let form1 = document.querySelector(".tl form")
+let form2 = document.querySelector(".sl form")
+let form3 = document.querySelector(".pos form")
+
+let childcount1 = document.querySelectorAll(".tl form div").length
+let childcount2 = document.querySelectorAll(".sl form div").length
+let childcount3 = document.querySelectorAll(".pos form div").length
+
+
+for(let i = childcount1; i<11; i++){ 
+        let newdiv = document.createElement("div")
+        newdiv.innerHTML = `<div class="mp-form">
+                            <label for="name"></label>
+                            <input type="text" name="Player${i}" placeholder="Player Name" required>
+                            </div>`
+        form1.append(newdiv)
+}
+
+for(let i = childcount3; i<11; i++){ 
+    let newdiv = document.createElement("div")
+    newdiv.innerHTML = `<div class="mp-form">
+                        
+                        <input type="text" name="Pos${i}" placeholder="Player Position" required>
+                        </div>`
+    form3.append(newdiv)
+}
+
+function Sumbit1() {
+    form1.submit()
+}
+function Sumbit2() {
+    form2.submit()
+}
+function Sumbit3() {
+    form3.submit()
+}
+
+
+
+
+
+
+
+
+
 const confirmMes = document.createElement("div");
 
 let allSelected = [];
@@ -43,11 +90,11 @@ document.querySelector("#conf").addEventListener('change', function() {
 
     const slLabel = document.querySelectorAll(".sl label");
 
-    for(let i=0;i<slLabel.length;i++){
-        slLabel[i].innerHTML = `<label>${i+1}</label>`;
-        k = i;
-    }
-    k++;
+    // for(let i=0;i<slLabel.length;i++){
+    //     slLabel[i].innerHTML = `<label>${i+1}</label>`;
+    //     k = i;
+    // }
+    // k++;
 
     if (configOpts[1].selected){
         allSelected = []
@@ -57,7 +104,7 @@ document.querySelector("#conf").addEventListener('change', function() {
         let pos = document.querySelector(".pos");
         let tl = document.querySelector(".tl");
         subs.style.width = "auto"
-        pos.style.width = "30%"
+        pos.style.width = "20%"
         pos.classList.remove("darea");
         document.querySelector(".tl h2").style.color = "white";
         document.querySelector(".tl .fa-users-line").style.color = "white";
@@ -76,7 +123,8 @@ document.querySelector("#conf").addEventListener('change', function() {
         document.querySelector("#add-sub").style.height = "fit-content";
         document.querySelector(".fa-user-plus").onclick = () => {
             const newSub = document.createElement('div');
-            newSub.innerHTML = `<label for="name">${++k}</label> <input type="text" name="Sub${k}" placeholder="Substitute Name" required>`;
+            //<label for="name">${++k}</label>
+            newSub.innerHTML = `<label for="name"></label> <input type="text" name="Sub${k}" placeholder="Substitute Name" required>`;
             newSub.classList.add("mp-form");
             document.querySelector(".sl form").appendChild(newSub);
         }
@@ -100,7 +148,7 @@ document.querySelector("#conf").addEventListener('change', function() {
         let tl = document.querySelector(".tl");
         // subs.style.transitionDuration = "0.5s";
         subs.style.width = "auto"
-        pos.style.width = "30%"
+        pos.style.width = "20%"
         document.querySelector(".tl h2").style.color = "white";
         document.querySelector(".tl .fa-users-line").style.color = "white";
         tl.style.borderRight = "5px solid rgb(152, 178, 34)";
@@ -189,7 +237,7 @@ document.querySelector("#conf").addEventListener('change', function() {
 
     if (configOpts[6].selected){
         document.querySelector(".co input").onclick = () =>{
-            document.querySelector
+         
             document.body.style.backgroundColor = "white";
             document.body.style.transitionDuration = "0.5s";
             setTimeout(()=>document.body.style.backgroundColor = "black",600);

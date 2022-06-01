@@ -7,7 +7,24 @@
 
       <script src="/js/modalView.js"></script>
       <script src="/js/modalService.js"></script>
-    
+   {{#if failedloggin}}
+        <div id="alert2" class="modal-sign2" style="display: block;">
+            <div class="alert-content2 modal-sign-content2">
+                <span id="close-sign-alert-index2" class="close-sign-alert2">&times;</span>
+                <fieldset class="fldset">
+                
+                    <h2>Wrong Credentials</h2>
+                
+                    <button id="alert-btn-index1">Return</button>
+                </fieldset>
+            </div>
+        </div>
+        <script>
+            const alertbtnclose = document.querySelector("#alert-btn-index1");
+            alertbtnclose.onclick = () => {
+            document.querySelector("#alert2").style.display = "none";}
+        </script>
+     {{/if}}
      {{#if aftersignup}}
         <div id="alert2" class="modal-sign2" style="display: block;">
             <div class="alert-content2 modal-sign-content2">

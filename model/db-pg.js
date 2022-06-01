@@ -22,15 +22,15 @@ const { Client } = require('pg');
 const client = new Client({
     user: 'postgres',
     host: 'localhost',
-    database: 'league',
-    password: '',//yourpassword
+    database: 'patras-league',
+    password: '24121998',
     port: 5432
 });
 
 client.connect((err) => {
     if (err)
         throw err;
-    else console.log("connected")
+    else console.log("connected to db")
 });
 
 

@@ -222,7 +222,7 @@ document.querySelector(".navbar").innerHTML = `
                   <ul>
                     <li>
                       <button class="sign-in">
-                        <a href="registration-page.html">
+                        <a href="registration-page">
                           <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-ball-football"
                           width="44" height="44" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" 
                           stroke-linecap="round" stroke-linejoin="round">

@@ -304,7 +304,7 @@ function createOption (e){
         newOption.style.height = defaultHeightMonth + 'px';
         
         e.parentElement.appendChild(newOption);
-        console.log(newlist);
+        // console.log(newlist);
     }
 }
 
@@ -601,7 +601,6 @@ document.querySelector(".selb").onclick = () => {
     
     const allOptions = document.querySelectorAll('.option')
     const lista = []
-    console.log(allOptions)
 
     allOptions.forEach( (el) => {
         let dict = {}
@@ -613,5 +612,5 @@ document.querySelector(".selb").onclick = () => {
 
 
     const dataToSend = {"lista":lista};
-
+    console.log(dataToSend.lista)
 }
