@@ -9,13 +9,13 @@ const client = new Pool({
     host: 'localhost',
     database: 'patras-league-db',
     password: 'koko1234',
-    port: 58592
+    port: 5433
 });
 
 client.connect((err) => {
     if (err)
         throw err;
-    else console.log("connected to db")
+    else console.log("Connected to Patras League database")
 });
 
 

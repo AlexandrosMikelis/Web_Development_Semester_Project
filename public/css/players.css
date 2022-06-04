@@ -1,7 +1,7 @@
-body{
-    background-color: rgb(5, 22, 26);
-    color: white;
-}
+#nav-players{
+    font-weight: bold;
+    color: #EB6E34;
+  }
 
 .mikrografies img {
     width: 10%;

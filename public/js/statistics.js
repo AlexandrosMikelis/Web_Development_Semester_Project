@@ -1,4 +1,12 @@
 
+
+
+
+
+
+
+
+
 const refR = document.querySelectorAll(".data");
 
 for(let i=9;i<16;i++){

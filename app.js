@@ -1,13 +1,9 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const db = require('./model/queries');
-
 const express = require('express')
 const { engine } = require('express-handlebars');
 const compression = require('compression');
-const path = require('path')
 const session = require('express-session');
-const dotenv = require('dotenv')
+const dotenv = require('dotenv');
+
 if (process.env.NODE_ENV !== 'production') {
     dotenv.config();
 }
