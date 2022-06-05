@@ -447,8 +447,8 @@ body {
   
   .img2 {
       background-image: url("/images/manager.svg");
-      /* min-height: 90%; */
-      background-color:thistle;
+      background-size: 10%;
+      background-color:rgb(210, 210, 210);
   }
   .img3 {
     background-image: url("/images/untitled.svg");
@@ -457,7 +457,7 @@ body {
 .img4 {
     background-image: url("/images/user.svg");
     /* min-height: 90%; */
-    background-color:thistle;
+    background-color:rgb(194, 194, 194);
 }
 
   .desk{
@@ -480,7 +480,7 @@ body {
   
   .dsclbl{
     color:#fff; 
-    background-color:purple; 
+    background: linear-gradient(90deg, #dad9e7 0%, white 100%, white 100%);
     text-align:center;
     padding:10px 60px;
   }
@@ -576,9 +576,9 @@ body {
   .bg-svg {
     width: 100%;
     background-size: cover;
-    height: 0;
+    height: 100px;
     padding: 0; 
-    padding-bottom: 92%;
+    padding-bottom: 32%;
     background-size: 30%;
     background-position: left 10%;
   }
@@ -594,7 +594,6 @@ body {
   }
 
   .svg-wrappp {
-    max-height: 700px;
     /* max-width: 1200px; */
     /* margin: auto;background-color: #ecd7c0; */
   }

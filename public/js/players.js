@@ -12,4 +12,23 @@ document.querySelectorAll(".all-players .containerdiv").forEach(item=>{
         }
         
     }
+});
+function toggle(id){
+    elem2show = document.querySelectorAll(`#${id}`);
+    elem2hidev1 = document.querySelectorAll(`.x-team-players-container>div:not([id=${id}])`);
+    elem2hidev2 = document.querySelectorAll(`.x-team-top-player>div:not([id=${id}])`);
+    for(const elem of elem2hidev1){
+        elem.style.display = 'none';
+    }
+    for(const elem of elem2hidev2){
+        elem.style.display = 'none';
+    }
+    for(const elem of elem2show){
+        elem.style.display = 'flex';
+    }
+    
+}
+window.addEventListener("load", ()=> {
+    
+    toggle('slide-1');
 })
